@@ -49,7 +49,7 @@ $.ajax({
       url: "https://maker.ifttt.com/trigger/oldvisitor/with/key/iY46qstJctzVcVh1IGrAFSlTK5WHuPmakgwERnn-WnW",
       type: "POST",
       data: {"value1":data},
-      complete: function(){alert("Success")}
+      //complete: function(){alert("Success")}
     });
 }
 
