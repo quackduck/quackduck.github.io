@@ -1,5 +1,3 @@
-
-
 let startDate = new Date();
 let elapsedTime = 0;
 let data= 0
