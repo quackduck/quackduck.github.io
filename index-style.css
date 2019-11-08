@@ -181,3 +181,29 @@ abbr {
     padding: 0px 0px 5px 0px;
   }
 }
+
+@media only screen and (max-width: 550px) {
+  body {
+    background-image: url("burj1.jpg");
+    transition: 2s;
+  }
+  .tab button {
+    transition: 0.3s;
+    width: 100%;
+    border-right: 0px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 0px solid black;
+  }
+  .tab {
+    border-bottom: 1px solid black;
+  }
+  .text {
+    width: 100%;
+    
+  }
+  .images {
+    width: 100%;
+    
+  }
+}
