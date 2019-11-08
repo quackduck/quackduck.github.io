@@ -61,6 +61,7 @@ $.ajax({
       url: "https://api.thingspeak.com/update?api_key=VVAE3RM6DF2D3L95",
       type: "GET",
       data: {"field1":data},
+      async: false,
       //complete: function(){alert("Success")}
     });
     console.log("EXECUTED THINGSPEAK");
