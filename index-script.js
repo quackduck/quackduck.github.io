@@ -49,6 +49,8 @@ $.ajax({
       data: {"value1":data},
       //complete: function(){alert("Success")}
     });
+    
+    console.log("executed oldvisitor");
 }
 
 function thingspeak(datatosend) {
@@ -61,6 +63,7 @@ $.ajax({
       data: {"field1":data},
       //complete: function(){alert("Success")}
     });
+    console.log("EXECUTED THINGSPEAK");
 }
 
 
