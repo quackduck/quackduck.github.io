@@ -36,7 +36,6 @@ $.ajax({
       type: "POST",
       data: {"value1":data},
       //complete: function(){alert("Success")}
-      async: false,
     });
 }
 
@@ -49,7 +48,6 @@ $.ajax({
       type: "POST",
       data: {"value1":data},
       //complete: function(){alert("Success")}
-      async: false,
     });
     
     console.log("executed oldvisitor");
