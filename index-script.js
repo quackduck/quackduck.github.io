@@ -25,8 +25,8 @@ window.addEventListener('blur', blur);
 window.addEventListener('beforeunload', beforeunload);
 
 function end () {
-thingspeak(elapsedTime/1000);
-oldvisitor(elapsedTime/1000);
+   oldvisitor(elapsedTime/1000);
+   thingspeak(elapsedTime/1000);
 }
 function newvisitor(datatosend) {
 let data= datatosend;
