@@ -44,8 +44,8 @@
 }
 
 .tab button:active {
-  transition: 0s;
-  color: black;
+  transition: 0.3s;
+  color: white;
 }
 
 body {
@@ -61,14 +61,14 @@ body {
   font-family: "Courier", Futura, Monospace;
   text-align: center;
   font-weight: lighter;
-  background-color: #d00000;
   border-style: solid;
   border-color: black;
   border-width: 0px 1px 1px 1px;
+  background-color: #ffc400;
   padding: 8px 0px;
   transition: 0.3s;
   margin: 0px;
-  color: white;
+  color: black;
 }
 
 a {
@@ -77,8 +77,8 @@ a {
 }
 
 .title h1:hover {
-  background-color: #fa0;
-  color: black;
+  background-color: #f50;
+  color: white;
 }
 
 .text {
@@ -131,12 +131,6 @@ p {
   display: flow-root;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 img {
   opacity: 0.5;
   transition: 0.3s;
@@ -155,6 +149,17 @@ abbr {
   display: inline;
   text-decoration: none;
 }
+
+#open {
+  background-color: #d00000;
+  color: white;
+}
+#open:hover {
+  background-color: #fa0;
+  color: black;
+}
+
+
 
 @media only screen and (max-width: 970px) {
   body {
@@ -200,10 +205,10 @@ abbr {
   }
   .text {
     width: 100%;
-    
+
   }
   .images {
     width: 100%;
-    
+
   }
 }
