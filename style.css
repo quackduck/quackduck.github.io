@@ -159,7 +159,9 @@ abbr {
   color: black;
 }
 
-
+.chart {
+  width: 100%
+}
 
 @media only screen and (max-width: 970px) {
   body {
