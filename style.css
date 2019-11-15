@@ -44,7 +44,6 @@
 }
 
 .tab button:active {
-  transition: 0.3s;
   color: white;
 }
 
@@ -159,8 +158,14 @@ abbr {
   color: black;
 }
 
-.chart {
-  width: 100%
+.chartcontainer {
+  width: 100%;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.chartcontainer:hover {
+  opacity: 1.0;
 }
 
 @media only screen and (max-width: 970px) {
