@@ -160,11 +160,16 @@ abbr {
 
 .chartcontainer {
   width: 100%;
+}
+
+.chart {
   opacity: 0.5;
   transition: 0.3s;
 }
 
-.chartcontainer:hover {
+.chart:hover {
+  width: 450px;
+  height: 260px;
   opacity: 1.0;
 }
 
