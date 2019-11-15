@@ -163,6 +163,8 @@ abbr {
 }
 
 .chart {
+  width: 450px;
+  height: 260px;
   opacity: 0.5;
   transition: 0.3s;
 }
