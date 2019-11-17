@@ -158,7 +158,7 @@ abbr {
   color: black;
 }
 
-.chartcontainer {
+.container {
   width: 100%;
 }
 
@@ -167,12 +167,21 @@ abbr {
   height: 260px;
   opacity: 0.5;
   transition: 0.3s;
+  margin: 50px auto 50px auto;
 }
 
 .chart:hover {
-  width: 450px;
-  height: 260px;
   opacity: 1.0;
+}
+
+.googlecontainer {
+  width: 100%;
+  height: 500px;
+}
+
+.google {
+  width: 100%;
+  height: 500px;
 }
 
 @media only screen and (max-width: 970px) {
