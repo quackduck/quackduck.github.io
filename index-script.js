@@ -43,14 +43,14 @@ function oldvisitor(datatosend) {
 let data= datatosend;
 
 $.ajax({
-      
+
       url: "https://maker.ifttt.com/trigger/oldvisitor/with/key/iY46qstJctzVcVh1IGrAFSlTK5WHuPmakgwERnn-WnW",
       type: "POST",
       data: {"value1":data},
       async: false,
       //complete: function(){alert("Success")}
     });
-    
+
     console.log("executed oldvisitor");
 }
 
@@ -58,7 +58,7 @@ function thingspeak(datatosend) {
 let data= datatosend;
 
 $.ajax({
-      
+
       url: "https://api.thingspeak.com/update?api_key=VVAE3RM6DF2D3L95",
       type: "GET",
       data: {"field1":data},
@@ -78,4 +78,10 @@ function online() {
 }
 function myprint() {
   window.print();
+}
+
+function showContent() {
+  var temp = document.getElementsByTagName("template")[0];
+  var clon = temp.content.cloneNode(true);
+  document.body.appendChild(clon);
 }
