@@ -182,7 +182,6 @@ abbr {
   margin: 0% 0%;
   font-size: 1em;
   font-family: Futura, Verdana, sans-serif;
-  background: ;
   outline: none;
   border: none;
   color: white;
@@ -196,6 +195,11 @@ abbr {
   opacity: 1;
 }
 
+@media only screen and (max-width: 716px) {
+  .notes {
+    margin: 0% 0% 0% 6%;
+  }
+}
 
 @media only screen and (max-width: 970px) {
   body {
@@ -250,5 +254,6 @@ abbr {
 
   .notes {
     width: 100%;
+    margin: 0%;
   }
 }
