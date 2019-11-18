@@ -178,8 +178,8 @@ abbr {
   transition: 0.3s;
   background-color: rgba(30, 52, 103, 0.5);
   height: 200px;
-  width: 50%;
-  margin: 0% 25%;
+  width: 47%;
+  margin: 0% 0%;
   font-size: 1em;
   font-family: Futura, Verdana, sans-serif;
   background: ;
@@ -246,5 +246,9 @@ abbr {
   .images {
     width: 100%;
 
+  }
+
+  .notes {
+    width: 100%;
   }
 }
