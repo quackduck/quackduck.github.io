@@ -84,5 +84,5 @@ function email() {
 
   var content = document.getElementById("mytextarea").value;
   console.log(content);
-  window.open('mailto:test@example.com?subject=Your Notes From quackduck.github.iot&body=' + content);
+  window.open('mailto:test@example.com?subject=Your Notes From quackduck.github.io&body=' + content);
 }
