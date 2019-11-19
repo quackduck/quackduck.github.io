@@ -226,6 +226,21 @@ em {
 
 }
 
+.email {
+  background-color:#ffc400 ;
+  padding: 7px 20px;
+  border: 1px solid black;
+  font-family: futura, verdana, sans-serif;
+  font-size: 1em;
+  outline: none;
+  color: black;
+  transition: 0.3s;
+}
+.email:hover {
+  background-color: #d00000;
+  color: white;
+}
+
 @media only screen and (max-width: 1406px) and (min-width: 970px) {
 .notes {
   margin: 0% 0% 0% 6%;
