@@ -200,7 +200,8 @@ abbr {
   font-size: 1em;
   font-family: Futura, Verdana, sans-serif;
   background-color: #ffc400;
-  padding: 20px
+
+  padding: 20px 10%
 }
 
 body {
@@ -212,7 +213,9 @@ body {
 }
 
 .copyright {
-  color: grey;
+  color: #505050;
+  font-family: Futura, Verdana, sans-serif ;
+  font-size: 0.8em;
 }
 
 @media only screen and (max-width: 1406px) and (min-width: 970px) {
