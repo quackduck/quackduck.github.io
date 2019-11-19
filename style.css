@@ -195,6 +195,26 @@ abbr {
   opacity: 1;
 }
 
+.footer {
+  width: 100%;
+  font-size: 1em;
+  font-family: Futura, Verdana, sans-serif;
+  background-color: #ffc400;
+  padding: 20px
+}
+
+body {
+  margin: 0%;
+}
+
+.codelink {
+   color: blue;
+}
+
+.copyright {
+  color: grey;
+}
+
 @media only screen and (max-width: 1406px) and (min-width: 970px) {
 .notes {
   margin: 0% 0% 0% 6%;
