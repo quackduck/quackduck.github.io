@@ -221,7 +221,9 @@ body {
 em {
   font-style: normal;
   font-family: courier, futura, verdana, sans-serif;
-  font-weight: 550;
+  font-weight: 600;
+  font-size: 1.2em
+
 }
 
 @media only screen and (max-width: 1406px) and (min-width: 970px) {
