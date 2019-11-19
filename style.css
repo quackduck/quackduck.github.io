@@ -235,6 +235,7 @@ em {
   outline: none;
   color: black;
   transition: 0.3s;
+  width: 25%;
 }
 .email:hover {
   background-color: #d00000;
