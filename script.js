@@ -83,6 +83,7 @@ function online() {
 function email() {
 
   var content = document.getElementById("mytextarea").value;
+  content = content.replace(/\n/g, "%0A"); // To retain the Line breaks.
   console.log(content);
   window.open('mailto:test@example.com?subject=Your Notes From quackduck.github.io&body=' + content);
 }
