@@ -1,4 +1,4 @@
-* {
+#1a2228* {
   box-sizing: border-box;
   /*display: flow-root;*/
   overflow: auto;
@@ -53,7 +53,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   transition: 2s;
-  background-color: #1c242c;
+  background-color: #1a2228;
 }
 
 .title h1 {
