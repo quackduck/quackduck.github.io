@@ -41,13 +41,22 @@
          </div>
       </div>
 
-      <div class="container">
-        <div class="chart">
-          <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/902701/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line"></iframe>
-        </div>
+      <textarea id="mytextarea" class="notes" placeholder="You can take notes here! On the bottom right corner of this box is a handle you can use to resize this box. At the bottom of this page are two buttons you can use to email yourself your notes or download them instead"></textarea>
+
+
+      <div class="chart">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/902701/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line"></iframe>
       </div>
 
-   </div>
+     <button onclick="email()" class="email">Email me my notes!</button>
+     <button onclick="download()" class="email">Download instead</button>
+
+ </div>
+ <div class="footer">
+   <em>Code</em> for this website <a href="https://github.com/quackduck/quackduck.github.io" class="codelink" target="_blank"> here</a>
+   <br> <br>
+   <p class="copyright">Copyright &copy; 2019 Ishan Goel All Rights Reserved.</p>
+</div>
 </body>
 
 </html>
