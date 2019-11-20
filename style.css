@@ -81,7 +81,6 @@ a {
 }
 
 .text {
-  position: static;
   font-family: Futura, Verdana, Sans-serif;
   font-size: 1em;
   float: left;
@@ -242,17 +241,17 @@ em {
   color: white;
 }
 
-@media only screen and (max-width: 1406px) and (min-width: 970px) {
+/* @media only screen and (max-width: 1389px) and (min-width: 971px) {
 .notes {
   margin: 0% 0% 0% 6%;
 }
 }
 
-@media only screen and (max-width: 716px) {
+@media only screen and (max-width: 701px) {
   .notes {
     margin: 0% 0% 0% 6%;
   }
-}
+} */
 
 @media only screen and (max-width: 970px) {
   body {
