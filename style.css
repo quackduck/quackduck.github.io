@@ -48,7 +48,7 @@
 }
 
 body {
-  background-image: url("burj.jpg");
+  background-image: url("images/burj.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -244,7 +244,7 @@ em {
 
 @media only screen and (max-width: 970px) {
   body {
-    background-image: url("burj1.jpg");
+    background-image: url("images/burj1.jpg");
     transition: 2s;
   }
   .tab button {
@@ -270,8 +270,7 @@ em {
 
 @media only screen and (max-width: 550px) {
   body {
-    background-image: url("mobilebackground3.jpg");
-    /* background-image: url("officialburj.jpg"); */
+    background-image: url("images/mobilebackground3.jpg");
     background-color: #7c8ea8;
     transition: 2s;
   }
