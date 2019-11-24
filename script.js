@@ -77,6 +77,34 @@ function online() {
   alert ("You are back online");
 }
 
+let now = 1
+
+function changeImage() {
+
+    var BackgroundImg=[
+            "images/aerialburj.jpg",
+            "images/fromthetop.jpg",
+            "images/burj.jpg",
+            "images/burjfromdown.jpg",
+            "images/burjscape.jpg"];
+
+    var i = Math.floor((Math.random() * 5));
+
+      if (now == i) {
+        console.log("i was gonna load the same image like a buffoon but you my dear creator have saved me from commiting this disastrous mistake");
+        changeImage();
+      }
+      else {
+        now=i;
+        document.body.style.backgroundImage = 'url("' + BackgroundImg[i] + '")';
+      }
+
+}
+
+
+if (window.innerWidth>550) {
+      window.setInterval(changeImage, 5000);
+}
 
 
 
