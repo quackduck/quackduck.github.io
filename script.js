@@ -86,6 +86,7 @@ function online() {
   alert ("You are back online");
 }
 
+var images = new Array()
 function preload() {
 				for (i = 0; i < preload.arguments.length; i++) {
 					images[i] = new Image()
