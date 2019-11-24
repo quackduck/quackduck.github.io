@@ -1,4 +1,7 @@
 
+window.addEventListener("load", function(){
+    changeImage();
+});
 let startDate = new Date();
 let elapsedTime = 0;
 let data= 0
@@ -18,7 +21,6 @@ const beforeunload = function() {
     const spentTime = endDate.getTime() - startDate.getTime();
     elapsedTime += spentTime;
 
-    // elapsedTime contains the time spent on page in milliseconds
 };
 
 window.addEventListener('focus', focus);
