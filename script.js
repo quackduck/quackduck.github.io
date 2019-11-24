@@ -25,13 +25,20 @@ window.addEventListener('focus', focus);
 window.addEventListener('blur', blur);
 window.addEventListener('beforeunload', beforeunload);
 
+var images = new Array()
+function preload() {
+  for (i = 0; i < preload.arguments.length; i++) {
+    images[i] = new Image()
+    images[i].src = preload.arguments[i]
+  }
+}
 preload(
-    "images/aerialburj.jpg",
-    "images/fromthetop.jpg",
-    "images/burj.jpg",
-    "images/burjfromdown.jpg",
-    "images/burjscape.jpg"
-			)
+  "images/aerialburj.jpg",
+  "images/fromthetop.jpg",
+  "images/burj.jpg",
+  "images/burjfromdown.jpg",
+  "images/burjscape.jpg"
+)
 
 function end () {
    oldvisitor(elapsedTime/1000);
@@ -86,16 +93,10 @@ function online() {
   alert ("You are back online");
 }
 
-var images = new Array()
-function preload() {
-				for (i = 0; i < preload.arguments.length; i++) {
-					images[i] = new Image()
-					images[i].src = preload.arguments[i]
-				}
-			}
 
 
-let now = 1
+
+var now = 1
 
 function changeImage() {
 
