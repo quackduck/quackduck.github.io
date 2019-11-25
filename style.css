@@ -53,7 +53,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  transition: 2s;
+  transition: 5s;
   background-color: #1a2228;
 }
 
@@ -245,7 +245,7 @@ em {
 @media only screen and (max-width: 970px) {
   body {
     background-image: url("images/burj1.jpg");
-    transition: 2s;
+    transition: 5s;
   }
   .tab button {
     transition: 0.3s;
@@ -272,7 +272,7 @@ em {
   body {
     background-image: url("images/mobilebackground3.jpg");
     background-color: #7c8ea8;
-    transition: 2s;
+    transition: 5s;
   }
   .tab button {
     transition: 0.3s;
