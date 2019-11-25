@@ -128,7 +128,7 @@ function changeImage() {
 
 
 if (window.innerWidth>550) {
-      window.setInterval(changeImage, 5000);
+      window.setInterval(changeImage, 20000);
 }
 
 
