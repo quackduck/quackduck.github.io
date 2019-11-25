@@ -1,6 +1,9 @@
 
 window.addEventListener("load", function(){
-    changeImage();
+if (window.innerWidth>550) {
+
+  changeImage();
+}
 });
 let startDate = new Date();
 let elapsedTime = 0;
@@ -20,6 +23,7 @@ const beforeunload = function() {
     const endDate = new Date();
     const spentTime = endDate.getTime() - startDate.getTime();
     elapsedTime += spentTime;
+
 
 };
 
@@ -98,7 +102,7 @@ function online() {
 
 
 
-var now = 1
+var now = 2
 
 function changeImage() {
 
