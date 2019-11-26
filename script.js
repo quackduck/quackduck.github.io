@@ -42,6 +42,7 @@ preload(
   "images/aerialburj.jpg",
   "images/fromthetop.jpg",
   "images/burj.jpg",
+  "images/burj1.jpg",
   "images/burjfromdown.jpg",
   "images/burjscape.jpg"
 )
@@ -109,27 +110,53 @@ function online() {
 
 
 
-
-var now = 2
+if (window.innerWidth > 970) {
+  var now = 1
+}
+if (window.innerWidth > 970) {
+  var now = 2
+}
 
 function changeImage() {
 
-  var BackgroundImg = [
-    "images/aerialburj.jpg",
-    "images/fromthetop.jpg",
-    "images/burj.jpg",
-    "images/burjfromdown.jpg",
-    "images/burjscape.jpg"
-  ];
+  if (window.innerWidth > 970) {
+    var BackgroundImg = [
+      "images/aerialburj.jpg",
+      "images/fromthetop.jpg",
+      "images/burj.jpg",
+      "images/burjfromdown.jpg",
+      "images/burjscape.jpg"
+    ];
 
-  var i = Math.floor((Math.random() * 5));
+    var i = Math.floor((Math.random() * 5));
 
-  if (now == i) {
-    console.log("i was gonna load the same image like a buffoon but you my dear creator have saved me from commiting this disastrous mistake");
-    changeImage();
-  } else {
-    now = i;
-    document.body.style.backgroundImage = 'url("' + BackgroundImg[i] + '")';
+    if (now == i) {
+      console.log("i was gonna load the same image like a buffoon but you my dear creator have saved me from commiting this disastrous mistake");
+      changeImage();
+    } else {
+      now = i;
+      document.body.style.backgroundImage = 'url("' + BackgroundImg[i] + '")';
+    }
+  }
+
+  if (window.innerWidth < 970) {
+    var BackgroundImg = [
+      "images/aerialburj.jpg",
+      "images/fromthetop.jpg",
+      "images/burj1.jpg",
+      "images/burjfromdown.jpg",
+      "images/burjscape.jpg"
+    ];
+
+    var i = Math.floor((Math.random() * 5));
+
+    if (now == i) {
+      console.log("i was gonna load the same image like a buffoon but you my dear creator have saved me from commiting this disastrous mistake");
+      changeImage();
+    } else {
+      now = i;
+      document.body.style.backgroundImage = 'url("' + BackgroundImg[i] + '")';
+    }
   }
 
 }
