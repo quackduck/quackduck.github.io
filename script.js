@@ -1,8 +1,24 @@
+
+window.addEventListener("DOMContentLoaded", function() {
+  if (window.innerWidth > 970) {
+
+    document.getElementById('showmobile').style.display = "none";
+  }
+  else {
+    document.getElementById('showdesktop').style.display = "none";
+  }
+
+});
+
+
+
+
 window.addEventListener("load", function() {
   if (window.innerWidth > 550) {
 
     changeImage();
   }
+
 });
 let startDate = new Date();
 let elapsedTime = 0;
@@ -173,7 +189,7 @@ function email() {
   var content = document.getElementById("mytextarea").value;
   content = content.replace(/\n/g, "%0A"); // To retain the Line breaks.
   console.log(content);
-  window.open('mailto:test@example.com?subject=Your Notes From quackduck.github.io&body=' + content);
+  window.open('mailto:?subject=Your Notes From quackduck.github.io&body=' + content);
 }
 
 function download() {
