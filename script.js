@@ -113,7 +113,7 @@ function online() {
 if (window.innerWidth > 970) {
   var now = 1
 }
-if (window.innerWidth > 970) {
+if (window.innerWidth <= 970) {
   var now = 2
 }
 
@@ -139,7 +139,7 @@ function changeImage() {
     }
   }
 
-  if (window.innerWidth < 970) {
+  if (window.innerWidth <= 970) {
     var BackgroundImg = [
       "images/aerialburj.jpg",
       "images/fromthetop.jpg",
