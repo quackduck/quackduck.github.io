@@ -22,7 +22,7 @@ function submit() {
   console.log("gasperyear=");
   console.log(gasperyear);
 
-  var gascartotalcost = carcost*(gasperyear*years)
+  var gascartotalcost = carcost+(gasperyear*years)
   console.log("gascartotalcost=");
   console.log(gascartotalcost);
 
