@@ -34,7 +34,7 @@ function submit() {
   }
 
   else {
-    alert("tesla loses")
+    alert("GAS CAR WINS and goes on to destroy earth")
   }
 
 
