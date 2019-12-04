@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<!-- https://quackduck.github.io/electric/ -->
 <html lang="en" dir="ltr">
 
 <head>
@@ -7,9 +9,9 @@
   <script src="script.js"></script>
 </head>
 
-<body>
+<body onkeyup="newsubmit()">
   <h1>Find out how your backwords 1800s technology gas car compares to a Model 3</h1>
-  <h3>Please give all costs in dirhams</h3>
+  <h3>Please give all costs in dirhams. Tesla Model 3 Standard Range taken (35,000 $)</h3>
 
   Mileage in km per liter <br>
   <input type="number" id="mileage">
@@ -29,11 +31,11 @@
   Distance travelled per year in km <br>
   <input type="number" id="distance">
   <br>
-  Number of years you plan to use it for
+  Number of years you plan to use it for <br>
   <input type="number" id="years">
   <br>
-  <button onclick="submit()">Submit</button>
-
+  <!-- <button onclick="submit()">Submit</button> -->
+  <p id="result"></p>
 
 </body>
 
