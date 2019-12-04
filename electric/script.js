@@ -69,14 +69,14 @@ function submit() {
     //var equalyears = mileage*(128450-carcost)/(maintcost*mileage+(gascost*distance)-(0.43104183*mileage))
 
     if (electcartotalcost<gascartotalcost) {
-      document.getElementById("result").innerHTML= "TESLA WINS <br> It won by " + (gascartotalcost-electcartotalcost) + "AED";
+      document.getElementById("result").innerHTML= "TESLA WINS <br> It won by " + (gascartotalcost-electcartotalcost) + " AED";
     }
     else if (electcartotalcost==gascartotalcost) {
       document.getElementById("result").innerHTML= "uhhh this is awkward. the cost is the same" ;
     }
 
     else {
-      document.getElementById("result").innerHTML= "GAS CAR WINS and goes on to destroy earth <br> It won by " + (electcartotalcost-gascartotalcost) + "AED" //<br> At " + equalyears + " years the total cost of this gas car and the Tesla is the same";
+      document.getElementById("result").innerHTML= "GAS CAR WINS and goes on to destroy earth <br> It won by " + (electcartotalcost-gascartotalcost) + " AED" //<br> At " + equalyears + " years the total cost of this gas car and the Tesla is the same";
     }
 
 
