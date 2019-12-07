@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  transition: 0.5s;
 }
 
 body {
@@ -21,18 +22,20 @@ input {
 }
 
 #result {
+
+}
+
+#inputs {
+
+}
+
+.text {
   background-color: rgba(35, 181, 211, 0.5);
   margin: 20px 0px;
   padding: 20px;
   border-radius: 20px
 }
 
-#inputs {
-  background-color: rgba(35, 181, 211, 0.5);
-  margin: 20px 0px;
-  padding: 20px;
-  border-radius: 20px
-}
 
 #dirhams {
   color: red;
@@ -43,4 +46,14 @@ h3 {
   margin: 20px 0px;
   padding: 20px;
   border-radius: 20px;
+}
+
+a {
+  color: #6667ff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+  color: black;
 }
