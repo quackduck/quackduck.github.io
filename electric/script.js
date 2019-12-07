@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", function() {
     //var equalyears = mileage*(128450-carcost)/(maintcost*mileage+(gascost*distance)-(0.43104183*mileage))
 
     if (electcartotalcost<gascartotalcost) {
-      document.getElementById("result").innerHTML= "TESLA WINS <br> It won by " + (gascartotalcost-electcartotalcost) + " AED";
+      document.getElementById("result").innerHTML= "TESLA WINS <br> It won by " + (Math.trunc(gascartotalcost-electcartotalcost)) + " AED";
     }
     else if (electcartotalcost==gascartotalcost) {
       document.getElementById("result").innerHTML= "uhhh this is awkward. the cost is the same" ;
