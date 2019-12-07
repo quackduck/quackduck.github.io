@@ -1,10 +1,9 @@
 window.addEventListener("DOMContentLoaded", function() {
-  newsubmit();
+  submit();
 
 });
 
-  function newsubmit() {
-    console.log("clicked");
+  function submit() {
     var mileage = parseFloat(document.getElementById("mileage").value);
     var gascost = parseFloat(document.getElementById("gascost").value);
     var carcost = parseFloat(document.getElementById("carcost").value);
@@ -15,21 +14,17 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
     var electperyear = electcost*(distance/350)*55.5
-    console.log("electperyear=");
-    console.log(electperyear);
+
 
     var electcartotalcost = 128450+(electperyear*years)
-    console.log("electcartotalcost=");
-    console.log(electcartotalcost);
+
 
 
     var gasperyear = maintcost+(gascost*(distance/mileage))
-    console.log("gasperyear=");
-    console.log(gasperyear);
+
 
     var gascartotalcost = carcost+(gasperyear*years)
-    console.log("gascartotalcost=");
-    console.log(gascartotalcost);
+
 
     //var equalyears = mileage*(128450-carcost)/(maintcost*mileage+(gascost*distance)-(0.43104183*mileage))
 
@@ -48,6 +43,7 @@ window.addEventListener("DOMContentLoaded", function() {
     if (isNaN(mileage)||isNaN(gascost)||isNaN(carcost)||isNaN(maintcost)||isNaN(electcost)||isNaN(distance)||isNaN(years)) {
       document.getElementById("result").innerHTML= "Fill in the values and the result will be shown here";
     }
+
 
 
 
