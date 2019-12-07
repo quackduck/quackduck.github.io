@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     else {
-      document.getElementById("result").innerHTML= "GAS CAR WINS and goes on to destroy earth <br> It won by " + (electcartotalcost-gascartotalcost) + " AED" //<br> At " + equalyears + " years the total cost of this gas car and the Tesla is the same";
+      document.getElementById("result").innerHTML= "GAS CAR WINS and goes on to destroy earth <br> It won by " + (Math.trunc(electcartotalcost-gascartotalcost)) + " AED" //<br> At " + equalyears + " years the total cost of this gas car and the Tesla is the same";
     }
 
 
