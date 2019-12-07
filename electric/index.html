@@ -5,18 +5,19 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Electric Car Cost Calculator</title>
+  <title>Switch ⚡️</title>
   <script src="script.js"></script>
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ishan Goel">
+  <link rel="icon" href="shock.png">
 </head>
 
 <body onkeyup="submit()" onclick="submit()" onkeydown="submit()" onkeypress="submit()">
   <h1>Find out how your backwords 1800s technology gas car compares to a Model 3</h1>
-  <h3><span id="dirhams">Please give all costs in dirhams.</span> Tesla Model 3 Standard Range taken (35,000 $)</h3>
-  <div id="inputs">
+  <h3><span id="dirhams">Please give all costs in Dirhams.</span> Tesla Model 3 Standard Range taken (35,000 $)</h3>
+  <div id="inputs" class="text">
     Mileage in km per liter <br>
     <input type="number" id="mileage">
     <br>
@@ -32,7 +33,7 @@
     Cost of electricity per kWH <br>
     <input type="number" id="electcost">
     <br>
-    Distance travelled per year in km <br>
+    Distance travelled per day on average in km <br>
     <input type="number" id="distance">
     <br>
     Number of years you plan to use it for <br>
@@ -40,8 +41,9 @@
     <br>
   </div>
 
-  <p id="result"></p>
-
+  <p id="result" class="text"></p>
+  <p class="text"><a target="_blank" href="https://cleantechnica.com/2019/09/27/tesla-model-3-vs-toyota-camry-5-year-cost-to-own/">Clean Technica On Costs</a> <br><a target="_blank"
+      href="https://evannex.com/blogs/news/total-cost-of-ownership-tesla-model-3-vs-toyota-camry">Comparing a Toyota Camry to the Tesla Model 3</a></p>
 </body>
 
 </html>
