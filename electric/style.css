@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Futura, Verdana, sans-serif;
+  background-color: papayawhip;
+  width: 80%;
+  margin: auto;
+}
+
+input {
+  background-color: #FFF7E9;
+  color: blue;
+  font-size: 1em;
+  margin: 5px 20px 20px 20px;
+  outline: none;
+  border-width: 1px;
+  padding: 4px;
+  font-family: Futura, Verdana, sans-serif;;
+}
+
+#result {
+  background-color: rgba(35, 181, 211, 0.5);
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 20px
+}
+
+#inputs {
+  background-color: rgba(35, 181, 211, 0.5);
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 20px
+}
+
+#dirhams {
+  color: red;
+}
+
+h3 {
+  background-color: rgba(255, 255, 100, 0.5);
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 20px;
+}

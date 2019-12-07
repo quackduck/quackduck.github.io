@@ -7,34 +7,39 @@
   <meta charset="utf-8">
   <title>Electric Car Cost Calculator</title>
   <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ishan Goel">
 </head>
 
 <body onkeyup="newsubmit()">
   <h1>Find out how your backwords 1800s technology gas car compares to a Model 3</h1>
-  <h3>Please give all costs in dirhams. Tesla Model 3 Standard Range taken (35,000 $)</h3>
+  <h3><span id="dirhams">Please give all costs in dirhams.</span> Tesla Model 3 Standard Range taken (35,000 $)</h3>
+  <div id="inputs">
+    Mileage in km per liter <br>
+    <input type="number" id="mileage">
+    <br>
+    Cost of gas per liter <br>
+    <input type="number" id="gascost">
+    <br>
+    Initial cost of car <br>
+    <input type="number" id="carcost">
+    <br>
+    Maintanence costs per year <br>
+    <input type="number" id="maintcost">
+    <br>
+    Cost of electricity per kWH <br>
+    <input type="number" id="electcost">
+    <br>
+    Distance travelled per year in km <br>
+    <input type="number" id="distance">
+    <br>
+    Number of years you plan to use it for <br>
+    <input type="number" id="years">
+    <br>
+  </div>
 
-  Mileage in km per liter <br>
-  <input type="number" id="mileage">
-  <br>
-  Cost of gas per liter <br>
-  <input type="number" id="gascost">
-  <br>
-  Initial cost of car <br>
-  <input type="number" id="carcost">
-  <br>
-  Maintanence costs per year <br>
-  <input type="number" id="maintcost">
-  <br>
-  Cost of electricity per kWH <br>
-  <input type="number" id="electcost">
-  <br>
-  Distance travelled per year in km <br>
-  <input type="number" id="distance">
-  <br>
-  Number of years you plan to use it for <br>
-  <input type="number" id="years">
-  <br>
-  <!-- <button onclick="submit()">Submit</button> -->
   <p id="result"></p>
 
 </body>
