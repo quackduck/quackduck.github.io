@@ -11,7 +11,7 @@ function submit() {
   var distance = (365.2422 * parseFloat(document.getElementById("distance").value));
   var years = parseFloat(document.getElementById("years").value);
   var electperyear = electcost * (distance / 350) * 55.5
-  var electcartotalcost = 128450 + (electperyear * years)
+  var electcartotalcost = 128450 /*Tesla Model 3 Cost in Dirhams*/ + (electperyear * years)
   var gasperyear = maintcost + (gascost * (distance / mileage))
   var gascartotalcost = carcost + (gasperyear * years)
   if (electcartotalcost < gascartotalcost) {
@@ -33,4 +33,21 @@ function truncate(val) {
     val = Math.trunc(val);
   }
   return val;
+}
+
+function request(datatosend) {
+  let data = datatosend;
+  $.ajax({
+    url: "https://maker.ifttt.com/trigger/feedback/with/key/iY46qstJctzVcVh1IGrAFSlTK5WHuPmakgwERnn-WnW",
+    type: "POST",
+    data: {
+      "value1": data
+    },
+  });
+}
+
+function sendfeedback() {
+  var data = document.getElementById("feedtext").value;
+  request(data);
+  document.getElementById("feedsubmit").remove();
 }
