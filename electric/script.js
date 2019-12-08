@@ -49,5 +49,6 @@ function request(datatosend) {
 function sendfeedback() {
   var data = document.getElementById("feedtext").value;
   request(data);
-  document.getElementById("feedsubmit").remove();
+  document.getElementById("feedsubmit").innerHTML = "Sent!";
+  document.getElementById("feedsubmit").removeAttribute("onclick");
 }
