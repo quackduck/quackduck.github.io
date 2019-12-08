@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", function() {
   submit();
 });
+
 function submit() {
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
@@ -26,10 +27,9 @@ function submit() {
 }
 
 function truncate(val) {
-  if (val<1) {
-    val = (Math.trunc(100*val)/100)
-  }
-  else {
+  if (val < 1) {
+    val = (Math.trunc(100 * val) / 100)
+  } else {
     val = Math.trunc(val);
   }
   return val;
