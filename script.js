@@ -1,10 +1,8 @@
-
 window.addEventListener("DOMContentLoaded", function() {
   if (window.innerWidth > 970) {
 
     document.getElementById('showmobile').style.display = "none";
-  }
-  else {
+  } else {
     document.getElementById('showdesktop').style.display = "none";
   }
 
@@ -18,6 +16,14 @@ window.addEventListener("load", function() {
 
     changeImage();
   }
+  preload(
+    "images/aerialburj.jpg",
+    "images/fromthetop.jpg",
+    "images/burj.jpg",
+    "images/burj1.jpg",
+    "images/burjfromdown.jpg",
+    "images/burjscape.jpg"
+  )
 
 });
 let startDate = new Date();
@@ -54,14 +60,7 @@ function preload() {
     images[i].src = preload.arguments[i]
   }
 }
-preload(
-  "images/aerialburj.jpg",
-  "images/fromthetop.jpg",
-  "images/burj.jpg",
-  "images/burj1.jpg",
-  "images/burjfromdown.jpg",
-  "images/burjscape.jpg"
-)
+
 
 function end() {
   oldvisitor(elapsedTime / 1000);
