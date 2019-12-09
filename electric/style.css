@@ -70,7 +70,7 @@ a:hover {
   font-family: Futura, Verdana, sans-serif;
 }
 
-#feedsubmit {
+.feedsubmit {
   background-color: yellowgreen;
   padding: 5px 20px;
   margin: 0px 0px 20px 0px;
@@ -80,12 +80,12 @@ a:hover {
   outline: none;
 }
 
-#feedsubmit:hover {
+.feedsubmithover:hover {
   background-color: #6667ff;
   color: #FFF7E9;
 }
 
-#feedsubmit:active {
+.feedsubmitactive:active {
   transition: 0s;
   color: red;
 }

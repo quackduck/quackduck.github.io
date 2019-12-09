@@ -3,6 +3,11 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 function submit() {
+  var electcarcost = 159900;
+  // if (document.getElementById("electloaded").checked) {
+  //   var electcarcost =  259659.89;
+  //   console.log(electcarcost);
+  // }
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
   var carcost = parseFloat(document.getElementById("carcost").value);
@@ -10,8 +15,9 @@ function submit() {
   var electcost = parseFloat(document.getElementById("electcost").value);
   var distance = (365.2422 * parseFloat(document.getElementById("distance").value));
   var years = parseFloat(document.getElementById("years").value);
-  var electperyear = electcost * (distance / 350) * 55.5
-  var electcartotalcost = 128450 /*Tesla Model 3 Cost in Dirhams*/ + (electperyear * years)
+  var electperyear = electcost * (distance / 350) * 55.5;
+  console.log(electcarcost);
+  var electcartotalcost = electcarcost + (electperyear * years)
   var gasperyear = maintcost + (gascost * (distance / mileage))
   var gascartotalcost = carcost + (gasperyear * years)
   if (electcartotalcost < gascartotalcost) {
@@ -19,7 +25,7 @@ function submit() {
   } else if (electcartotalcost == gascartotalcost) {
     document.getElementById("result").innerHTML = "uhhh this is awkward. the cost is the same";
   } else {
-    document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " AED" //<br> At " + equalyears + " years the total cost of this gas car and the Tesla is the same";
+    document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " AED";
   }
   if (isNaN(mileage) || isNaN(gascost) || isNaN(carcost) || isNaN(maintcost) || isNaN(electcost) || isNaN(distance) || isNaN(years)) {
     document.getElementById("result").innerHTML = "Fill in the values and the result will be shown here";
@@ -51,4 +57,6 @@ function sendfeedback() {
   request(data);
   document.getElementById("feedsubmit").innerHTML = "Sent!";
   document.getElementById("feedsubmit").removeAttribute("onclick");
+  document.getElementById("feedsubmit").classList.remove("feedsubmithover");
+  document.getElementById("feedsubmit").classList.remove("feedsubmitactive");
 }
