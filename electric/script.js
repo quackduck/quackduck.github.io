@@ -15,8 +15,7 @@ function submit() {
   var electcost = parseFloat(document.getElementById("electcost").value);
   var distance = (365.2422 * parseFloat(document.getElementById("distance").value));
   var years = parseFloat(document.getElementById("years").value);
-  var electperyear = electcost * (distance / 350) * 55.5;
-  console.log(electcarcost);
+  var electperyear = electcost * (distance / 400) * 50;
   var electcartotalcost = electcarcost + (electperyear * years)
   var gasperyear = maintcost + (gascost * (distance / mileage))
   var gascartotalcost = carcost + (gasperyear * years)
