@@ -54,9 +54,13 @@ function request(datatosend) {
 
 function sendfeedback() {
   var data = document.getElementById("feedtext").value;
-  request(data);
-  document.getElementById("feedsubmit").innerHTML = "Sent!";
-  document.getElementById("feedsubmit").removeAttribute("onclick");
-  document.getElementById("feedsubmit").classList.remove("feedsubmithover");
-  document.getElementById("feedsubmit").classList.remove("feedsubmitactive");
+  if (!data.match(/\S/)) {
+    alert("Please write in your feedback before submitting");
+  } else {
+    request(data);
+    document.getElementById("feedsubmit").innerHTML = "Sent!";
+    document.getElementById("feedsubmit").removeAttribute("onclick");
+    document.getElementById("feedsubmit").classList.remove("feedsubmithover");
+    document.getElementById("feedsubmit").classList.remove("feedsubmitactive");
+  }
 }

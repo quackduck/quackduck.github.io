@@ -18,15 +18,7 @@ input {
   outline: none;
   border-width: 1px;
   padding: 4px;
-  font-family: Futura, Verdana, sans-serif;;
-}
-
-#result {
-
-}
-
-#inputs {
-
+  font-family: Futura, Verdana, sans-serif;
 }
 
 .text {
@@ -35,7 +27,6 @@ input {
   padding: 20px;
   border-radius: 20px
 }
-
 
 #dirhams {
   color: red;
@@ -50,13 +41,14 @@ h3 {
 
 a {
   color: #6667ff;
-    text-decoration: none;
-    transition: 0.2s;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
 a:hover {
   color: black;
 }
+
 #feedtext {
   outline: none;
   border: none;
