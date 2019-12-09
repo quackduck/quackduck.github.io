@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 function submit() {
-  var electcarcost = 159900;
+  var electcarcost = 128450 //159900;
   // if (document.getElementById("electloaded").checked) {
   //   var electcarcost =  259659.89;
   //   console.log(electcarcost);
