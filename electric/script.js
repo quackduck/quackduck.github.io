@@ -3,10 +3,12 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 function submit() {
-  var electcarcost = 128450 //159900;
-  // if (document.getElementById("electloaded").checked) {
-  //   var electcarcost =  259659.89;
-  //   console.log(electcarcost);
+  var electcarcost = 159900 //159900 is the online price. for the 35000$ car you have to visit a store;
+
+  var range = 400;
+  var battkwh = 50;
+  // if (document.getElementById('')) {
+  //
   // }
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
@@ -15,7 +17,7 @@ function submit() {
   var electcost = parseFloat(document.getElementById("electcost").value);
   var distance = (365.2422 * parseFloat(document.getElementById("distance").value));
   var years = parseFloat(document.getElementById("years").value);
-  var electperyear = electcost * (distance / 400) * 50;
+  var electperyear = electcost * (distance / range) * battkwh;
   var electcartotalcost = electcarcost + (electperyear * years)
   var gasperyear = maintcost + (gascost * (distance / mileage))
   var gascartotalcost = carcost + (gasperyear * years)

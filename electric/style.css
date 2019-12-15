@@ -81,3 +81,10 @@ a:hover {
   transition: 0s;
   color: red;
 }
+
+#cares {
+  color: blue;
+  font-weight: 400;
+  font-family: courier, monospace;
+  font-size: 1.3em;
+}
