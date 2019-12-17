@@ -7,9 +7,9 @@ function submit() {
 
   var range = 400;
   var battkwh = 50;
-  // if (document.getElementById('')) {
-  //
-  // }
+  if (document.getElementById('fullsd').checked) {
+    var electcarcost += 24200
+  }
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
   var carcost = parseFloat(document.getElementById("carcost").value);
