@@ -10,6 +10,14 @@ function submit() {
   if (document.getElementById("fullsd").checked) {
     electcarcost += 24200;
   }
+  if (document.getElementById("autof").checked) {
+    document.getElementById("mileage").setAttribute("value", "12");
+    document.getElementById("gascost").setAttribute("value", "2");
+    document.getElementById("carcost").setAttribute("value", "100000");
+    document.getElementById("maintcost").setAttribute("value", "5000");
+    document.getElementById("electcost").setAttribute("value", "0.23");
+    document.getElementById("distance").setAttribute("value", "30");
+  }
   // if (document.getElementById("fullsd").checked) {
   //   var electcarcost = 159900 + 24200;
   // }
