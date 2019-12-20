@@ -10,22 +10,6 @@ function submit() {
   if (document.getElementById("fullsd").checked) {
     electcarcost += 24200;
   }
-
-
-  // if (document.getElementById("autof").checked) {
-  //   document.getElementById("mileage").setAttribute("value", "12");
-  //   document.getElementById("gascost").setAttribute("value", "2");
-  //   document.getElementById("carcost").setAttribute("value", "100000");
-  //   document.getElementById("maintcost").setAttribute("value", "5000");
-  //   document.getElementById("electcost").setAttribute("value", "0.23");
-  //   document.getElementById("distance").setAttribute("value", "30");
-  // }
-
-
-
-  // if (document.getElementById("fullsd").checked) {
-  //   var electcarcost = 159900 + 24200;
-  // }
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
   var carcost = parseFloat(document.getElementById("carcost").value);
@@ -38,12 +22,13 @@ function submit() {
   var gasperyear = maintcost + (gascost * (distance / mileage))
   var gascartotalcost = carcost + (gasperyear * years)
   if (electcartotalcost < gascartotalcost) {
-    document.getElementById("result").innerHTML = "TESLA WINS <br> It won by " + (truncate(gascartotalcost - electcartotalcost)) + " AED";
+    document.getElementById("result").innerHTML = "TESLA WINS <br> It won by " + (truncate(gascartotalcost - electcartotalcost)) + " AED <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100;
   } else if (electcartotalcost == gascartotalcost) {
-    document.getElementById("result").innerHTML = "uhhh this is awkward. the cost is the same";
+    document.getElementById("result").innerHTML = "Uhhh this is awkward. The cost is the same";
   } else {
-    document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " AED";
+    document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " AED <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100;
   }
+
   if (isNaN(mileage) || isNaN(gascost) || isNaN(carcost) || isNaN(maintcost) || isNaN(electcost) || isNaN(distance) || isNaN(years)) {
     document.getElementById("result").innerHTML = "Fill in the values and the result will be shown here";
   }
@@ -83,9 +68,9 @@ function sendfeedback() {
 }
 
 function autofill() {
-  document.getElementById("mileage").setAttribute("value", "12");
+  document.getElementById("mileage").setAttribute("value", "11");
   document.getElementById("gascost").setAttribute("value", "2");
-  document.getElementById("carcost").setAttribute("value", "100000");
+  document.getElementById("carcost").setAttribute("value", "120000");
   document.getElementById("maintcost").setAttribute("value", "5000");
   document.getElementById("electcost").setAttribute("value", "0.23");
   document.getElementById("distance").setAttribute("value", "30");
