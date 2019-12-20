@@ -10,14 +10,19 @@ function submit() {
   if (document.getElementById("fullsd").checked) {
     electcarcost += 24200;
   }
-  if (document.getElementById("autof").checked) {
-    document.getElementById("mileage").setAttribute("value", "12");
-    document.getElementById("gascost").setAttribute("value", "2");
-    document.getElementById("carcost").setAttribute("value", "100000");
-    document.getElementById("maintcost").setAttribute("value", "5000");
-    document.getElementById("electcost").setAttribute("value", "0.23");
-    document.getElementById("distance").setAttribute("value", "30");
-  }
+
+
+  // if (document.getElementById("autof").checked) {
+  //   document.getElementById("mileage").setAttribute("value", "12");
+  //   document.getElementById("gascost").setAttribute("value", "2");
+  //   document.getElementById("carcost").setAttribute("value", "100000");
+  //   document.getElementById("maintcost").setAttribute("value", "5000");
+  //   document.getElementById("electcost").setAttribute("value", "0.23");
+  //   document.getElementById("distance").setAttribute("value", "30");
+  // }
+
+
+
   // if (document.getElementById("fullsd").checked) {
   //   var electcarcost = 159900 + 24200;
   // }
@@ -75,4 +80,26 @@ function sendfeedback() {
     document.getElementById("feedsubmit").classList.remove("feedsubmithover");
     document.getElementById("feedsubmit").classList.remove("feedsubmitactive");
   }
+}
+
+function autofill() {
+  document.getElementById("mileage").setAttribute("value", "12");
+  document.getElementById("gascost").setAttribute("value", "2");
+  document.getElementById("carcost").setAttribute("value", "100000");
+  document.getElementById("maintcost").setAttribute("value", "5000");
+  document.getElementById("electcost").setAttribute("value", "0.23");
+  document.getElementById("distance").setAttribute("value", "30");
+  document.getElementById("autofillbutton").innerHTML = "Remove Autofill";
+  document.getElementById("autofillbutton").setAttribute("onclick", "remautofill()");
+}
+
+function remautofill() {
+  document.getElementById("mileage").removeAttribute("value");
+  document.getElementById("gascost").removeAttribute("value");
+  document.getElementById("carcost").removeAttribute("value");
+  document.getElementById("maintcost").removeAttribute("value");
+  document.getElementById("electcost").removeAttribute("value");
+  document.getElementById("distance").removeAttribute("value");
+  document.getElementById("autofillbutton").innerHTML = "Autofill Common Values";
+  document.getElementById("autofillbutton").setAttribute("onclick", "autofill()");
 }

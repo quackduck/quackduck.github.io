@@ -11,14 +11,16 @@ body {
 }
 
 input {
-  background-color: #FFF7E9;
+  background-color: papayawhip;
+  /*#FFF7E9;*/
   color: blue;
   font-size: 1em;
   margin: 5px 20px 20px 20px;
   outline: none;
-  border-width: 1px;
-  padding: 4px;
+  border-width: 0px;
+  padding: 5px 20px;
   font-family: Futura, Verdana, sans-serif;
+  border-radius: 20px;
 }
 
 .text {
@@ -70,6 +72,7 @@ a:hover {
   font-family: Futura, Verdana, sans-serif;
   transition: 0.3s;
   outline: none;
+  border: none;
 }
 
 .feedsubmithover:hover {
@@ -79,7 +82,7 @@ a:hover {
 
 .feedsubmitactive:active {
   transition: 0s;
-  color: red;
+  color: rgba(255, 255, 255, 0);
 }
 
 #cares {
