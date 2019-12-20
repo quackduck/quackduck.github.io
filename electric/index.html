@@ -22,14 +22,13 @@
     <h3>Updated 3:20 PM 17 Dec 2019 <br> <span id="dirhams">Please give all costs in Dirhams.</span> Base price UAE available Tesla Model 3 taken. (Standard Range Plus: 159,900 AED). Shanghai Gigafactory has completed production trials and the prices
       of Model 3s is
       expected to decline anytime soon </h3>
+    <p class="text"><a target="_blank" href="https://www.tesla.com/model3/design">Official Tesla Model 3 Design Website</a></p>
     <div id="inputs" class="text">
 
-      <a target="_blank" href="https://www.tesla.com/model3/design">Official Tesla Model 3 Design Website</a>
-      <br>
       <!-- <br>
       Long Range? (adds 30,000 AED, 150 km of range and Premium Interior) <br>
       <input type="checkbox" id="longr"> -->
-      <br>
+
       <button class="text feedsubmit feedsubmithover feedsubmitactive" id="autofillbutton" onclick="autofill()">Autofill Common Values</button>
       <br>
       <br>
@@ -40,19 +39,19 @@
       <input type="number" id="mileage">
       <br>
       Cost of gas per liter <br>
-      <input type="number" id="gascost">
+      <input type="number" id="gascost" step="0.1">
       <br>
       Initial cost of car <br>
-      <input type="number" id="carcost">
+      <input type="number" id="carcost" step="10000">
       <br>
       Maintanence costs per year <br>
-      <input type="number" id="maintcost">
+      <input type="number" id="maintcost" step="1000">
       <br>
       Cost of electricity per kWH <br>
-      <input type="number" id="electcost">
+      <input type="number" id="electcost" step="0.01">
       <br>
       Distance travelled per day on average in km <br>
-      <input type="number" id="distance">
+      <input type="number" id="distance" step="10">
       <br>
       Number of years you plan to use it for <br>
       <input type="number" id="years">
@@ -60,8 +59,10 @@
     </div>
 
     <p id="result" class="text"></p>
-    <p class="text"><a target="_blank" href="https://cleantechnica.com/2019/09/27/tesla-model-3-vs-toyota-camry-5-year-cost-to-own/">Clean Technica On Costs</a> <br><a target="_blank"
-        href="https://evannex.com/blogs/news/total-cost-of-ownership-tesla-model-3-vs-toyota-camry">Comparing a Toyota Camry to the Tesla Model 3</a></p>
+    <p class="text">
+      <a target="_blank" href="https://cleantechnica.com/2019/09/27/tesla-model-3-vs-toyota-camry-5-year-cost-to-own/">Clean Technica On Costs</a>
+      <br>
+      <a target="_blank" href="https://evannex.com/blogs/news/total-cost-of-ownership-tesla-model-3-vs-toyota-camry">Comparing a Toyota Camry to the Tesla Model 3</a></p>
     <div id="feedback">
       <textarea id="feedtext" class="text" placeholder="Any improvements or features I could add? Please also send me your Name and Email!"></textarea>
       <button onclick="sendfeedback()" class="text feedsubmithover feedsubmitactive feedsubmit" id="feedsubmit">Submit</button>
