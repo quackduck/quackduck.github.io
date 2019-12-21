@@ -69,7 +69,7 @@ function sendfeedback() {
 
 function autofill() {
   document.getElementById("mileage").setAttribute("value", "11");
-  document.getElementById("gascost").setAttribute("value", "2");
+  document.getElementById("gascost").setAttribute("value", "2.12");
   document.getElementById("carcost").setAttribute("value", "120000");
   document.getElementById("maintcost").setAttribute("value", "5000");
   document.getElementById("electcost").setAttribute("value", "0.23");
