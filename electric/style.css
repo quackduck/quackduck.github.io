@@ -91,3 +91,8 @@ a:hover {
   font-family: courier, monospace;
   font-size: 1.3em;
 }
+
+.detail {
+  font-size: 0.9em;
+  color: #222;
+}
