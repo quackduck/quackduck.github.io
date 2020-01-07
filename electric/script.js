@@ -5,8 +5,8 @@ window.addEventListener("DOMContentLoaded", function() {
 function submit() {
   var electcarcost = 159900; //159900 is the online price. for the 35000$ car you have to visit a store;
 
-  var range = 400;
-  var battkwh = 55;
+  var range = 410;
+  var battkwh = 50;
   if (document.getElementById("fullsd").checked) {
     electcarcost += 24200;
   }
