@@ -4,7 +4,17 @@ window.addEventListener("DOMContentLoaded", function() {
 
 function submit() {
   var electcarcost = 159900; //159900 is the online price. for the 35000$ car you have to visit a store;
-
+  if (document.getElementById("country").value == "usa") {
+    electcarcost = 39990;
+    document.getElementById("currency").innerHTML = "Please give all costs in Dollars(USD)";
+  } else if (document.getElementById("country").value == "india") {
+    electcarcost = 2494205; // 35,000 in INR
+    document.getElementById("currency").innerHTML = "Please give all costs in Rupees(INR)";
+  } else if (document.getElementById("country").value == "uae") {
+    electcarcost = 159900;
+    document.getElementById("currency").innerHTML = "Please give all costs in Dirhams(AED)";
+  }
+  console.log(electcarcost);
   var range = 410;
   var battkwh = 50;
   if (document.getElementById("fullsd").checked) {
