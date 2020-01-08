@@ -1,5 +1,8 @@
 window.addEventListener("DOMContentLoaded", function() {
   submit();
+  document.getElementById("compare").onclick = function() {
+    scroll()
+  };
 });
 
 function submit() {
@@ -145,4 +148,9 @@ function truncate(val) {
     val = Math.trunc(val);
   }
   return val;
+}
+
+function scroll() {
+  document.getElementById('scroll').scrollIntoView(true);
+  console.log("done");
 }
