@@ -18,25 +18,36 @@
 <body onkeyup="submit()" onclick="submit()" onkeydown="submit()" onkeypress="submit()">
   <div id="main">
     <h1>Find out how your backwords 1800s technology gas car compares to a Model 3</h1>
-    <h3>Updated 12:20 PM 8 Jan 2020 <br><br> <span class="red">Tesla is not yet in India.</span><br><br>Standard Range Plus Model 3 taken: (159,900 AED 39,990 USD).<br><br> Stardard Range taken for India as Tesla is expected to introduce that first
+    <a href="#scroll">
+      <button id="compare" class="text feedsubmit feedsubmithover feedsubmitactive">Start Comparing</button>
+    </a>
+
+
+    <h3>Updated 12:20 PM 8 Jan 2020 <br><br>
+      <span class="red">Tesla is not yet in India.</span>
+      <br><br>Standard Range Plus Model 3 taken: (159,900 AED 39,990 USD).
+      <br><br> Stardard Range taken for India as Tesla is expected to introduce that first
       (2,494,205
       Rupees).
       <br><br>Shanghai Gigafactory has started production and prices may
-      drop this year.<br><br>Gigafactory 4 in Berlin will be made this year. Electricity prices might fall to 11 Fils in the UAE as a new solar plant opens.<br><br>Price of fuel may increase due to recent attacks on the world's oil supply <br><br>
+      drop this year.
+      <br><br>Gigafactory 4 in Berlin will be made this year. Electricity prices might fall to 11 Fils in the UAE as a new solar plant opens.
+      <br><br>Price of fuel may increase due to recent attacks on the world's oil supply
+      <br><br>
       <span class="red">TESLA <a href="https://www.cnbc.com/2019/07/08/elon-musk-self-driving-robotaxis-could-make-teslas-more-expensive.html">PRICES WILL GO UP</a> SIGNIFICANTLY as value as a RoboTaxi increases as soon as Full Self Driving is
-        achieved</span> </h3>
-    <p class="text"><a target="_blank" href="https://www.tesla.com/model3/design">Official Tesla Model 3 Design Website</a></p>
+        achieved</span>
+    </h3>
+    <p class="text" id="nobottommargin">
+      <a target="_blank" href="https://www.tesla.com/model3/design">Official Tesla Model 3 Design Website</a>
+    </p>
+    <div id="scroll"></div>
+
     <div id="inputs" class="text">
-
-      <!-- <br>
-      Long Range? (adds 30,000 AED, 150 km of range and Premium Interior) <br>
-      <input type="checkbox" id="longr"> -->
-
       <button class="text feedsubmit feedsubmithover feedsubmitactive" id="autofillbutton" onclick="autofill()">Autofill Common Values</button>
       <br>
       I live in:
       <select class="dropdowns" id="country" onchange="submit()">
-        <option value="uae" class="options"> The UAE</option>
+        <option value="uae" class="options">The UAE</option>
         <option value="usa" class="options">The USA</option>
         <option value="india" class="options">India</option>
       </select>
