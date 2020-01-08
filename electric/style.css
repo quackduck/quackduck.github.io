@@ -96,3 +96,16 @@ a:hover {
   font-size: 0.9em;
   color: #222;
 }
+
+.dropdowns {
+  font-size: 1em;
+  font-family: Futura, Verdana, sans-serif;
+  background-color: papayawhip;
+  color: blue;
+  border: none;
+  outline: none;
+}
+
+#currency {
+  color: red;
+}
