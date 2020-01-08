@@ -8,7 +8,7 @@ function submit() {
     electcarcost = 39990;
     document.getElementById("currency").innerHTML = "Please give all costs in Dollars(USD)";
   } else if (document.getElementById("country").value == "india") {
-    electcarcost = 2494205; // 35,000 in INR
+    electcarcost = 35000 * 71.69; // 35,000 in INR
     document.getElementById("currency").innerHTML = "Please give all costs in Rupees(INR)";
   } else if (document.getElementById("country").value == "uae") {
     electcarcost = 159900;
@@ -68,14 +68,7 @@ function submit() {
   }
 }
 
-function truncate(val) {
-  if (val < 1) {
-    val = (Math.trunc(100 * val) / 100)
-  } else {
-    val = Math.trunc(val);
-  }
-  return val;
-}
+
 
 function request(datatosend) {
   let data = datatosend;
@@ -102,12 +95,34 @@ function sendfeedback() {
 }
 
 function autofill() {
-  document.getElementById("mileage").setAttribute("value", "11");
-  document.getElementById("gascost").setAttribute("value", "2.12");
-  document.getElementById("carcost").setAttribute("value", "120000");
-  document.getElementById("maintcost").setAttribute("value", "5000");
-  document.getElementById("electcost").setAttribute("value", "0.23");
-  document.getElementById("distance").setAttribute("value", "30");
+  if (document.getElementById("country").value == "usa") {
+    var mileage = 10;
+    var gascost = 2;
+    var carcost = truncate(130000 / 3.67);
+    var maintcost = truncate(5000 / 3.67);
+    var electcost = 0.06;
+    var distance = 40;
+  } else if (document.getElementById("country").value == "india") {
+    var mileage = 12;
+    var gascost = 4 * 19.4;
+    var carcost = 130000 * 19.4;
+    var maintcost = 5000 * 19.4;
+    var electcost = 4;
+    var distance = 40;
+  } else if (document.getElementById("country").value == "uae") {
+    var mileage = 11;
+    var gascost = 2.12;
+    var carcost = 130000;
+    var maintcost = 5000;
+    var electcost = 0.23;
+    var distance = 40;
+  }
+  document.getElementById("mileage").setAttribute("value", mileage);
+  document.getElementById("gascost").setAttribute("value", gascost);
+  document.getElementById("carcost").setAttribute("value", carcost);
+  document.getElementById("maintcost").setAttribute("value", maintcost);
+  document.getElementById("electcost").setAttribute("value", electcost);
+  document.getElementById("distance").setAttribute("value", distance);
   document.getElementById("autofillbutton").innerHTML = "Remove Autofill";
   document.getElementById("autofillbutton").setAttribute("onclick", "remautofill()");
 }
@@ -121,4 +136,13 @@ function remautofill() {
   document.getElementById("distance").removeAttribute("value");
   document.getElementById("autofillbutton").innerHTML = "Autofill Common Values";
   document.getElementById("autofillbutton").setAttribute("onclick", "autofill()");
+}
+
+function truncate(val) {
+  if (val < 1) {
+    val = (Math.trunc(100 * val) / 100)
+  } else {
+    val = Math.trunc(val);
+  }
+  return val;
 }
