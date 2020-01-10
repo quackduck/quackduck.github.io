@@ -98,27 +98,28 @@ function sendfeedback() {
 }
 
 function autofill() {
+  window.isautofill = true; // window makes it a global variable
   if (document.getElementById("country").value == "usa") {
     var mileage = 10;
-    var gascost = 2;
-    var carcost = truncate(130000 / 3.67);
-    var maintcost = truncate(5000 / 3.67);
-    var electcost = 0.06;
-    var distance = 40;
+    var gascost = 2.7;
+    var carcost = 37000;
+    var maintcost = 1200;
+    var electcost = 0.12;
+    var distance = 50;
   } else if (document.getElementById("country").value == "india") {
-    var mileage = 12;
-    var gascost = 4 * 19.4;
-    var carcost = 130000 * 19.4;
-    var maintcost = 5000 * 19.4;
-    var electcost = 4;
-    var distance = 40;
+    var mileage = 15;
+    var gascost = 80;
+    var carcost = 800000;
+    var maintcost = 16000;
+    var electcost = 6;
+    var distance = 50;
   } else if (document.getElementById("country").value == "uae") {
     var mileage = 11;
     var gascost = 2.12;
     var carcost = 130000;
     var maintcost = 5000;
     var electcost = 0.23;
-    var distance = 40;
+    var distance = 50;
   }
   document.getElementById("mileage").setAttribute("value", mileage);
   document.getElementById("gascost").setAttribute("value", gascost);
@@ -131,6 +132,7 @@ function autofill() {
 }
 
 function remautofill() {
+  window.isautofill = false;
   document.getElementById("mileage").removeAttribute("value");
   document.getElementById("gascost").removeAttribute("value");
   document.getElementById("carcost").removeAttribute("value");
@@ -153,4 +155,12 @@ function truncate(val) {
 function scroll() {
   document.getElementById('scroll').scrollIntoView(true);
   console.log("done");
+}
+
+function curchange() {
+  if (window.isautofill) {
+    remautofill();
+    autofill();
+  }
+  submit();
 }
