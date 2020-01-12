@@ -62,6 +62,7 @@ a:hover {
   font-size: 1em;
   font-family: Futura, Verdana, sans-serif;
   resize: none;
+  transition: 0s;
 }
 
 ::placeholder {
