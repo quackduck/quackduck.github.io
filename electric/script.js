@@ -5,6 +5,40 @@ window.addEventListener("DOMContentLoaded", function() {
   };
 });
 
+let startDate = new Date();
+let elapsedTime = 0;
+let data = 0
+
+const focus = function() {
+  startDate = new Date();
+};
+
+const blur = function() {
+  const endDate = new Date();
+  const spentTime = endDate.getTime() - startDate.getTime();
+  elapsedTime += spentTime;
+};
+
+const beforeunload = function() {
+  const endDate = new Date();
+  const spentTime = endDate.getTime() - startDate.getTime();
+  elapsedTime += spentTime;
+
+
+};
+
+window.addEventListener('focus', focus);
+window.addEventListener('blur', blur);
+window.addEventListener('beforeunload', beforeunload);
+
+var isowner = "false" //readCookie(isowner);
+
+function end() {
+  if (isowner == "true") {} else {
+    thingspeak(elapsedTime / 60000); //minutes
+  }
+}
+
 function submit() {
   var electcarcost = 159900; //159900 is the online price. for the 35000$ car you have to visit a store;
   if (document.getElementById("country").value == "usa") {
@@ -163,4 +197,34 @@ function curchange() {
     autofill();
   }
   submit();
+}
+
+function thingspeak(datatosend) {
+  let data = datatosend;
+
+  $.ajax({
+
+    url: "https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ",
+    type: "GET",
+    data: {
+      "field1": data
+    },
+    async: false,
+  });
+  console.log("EXECUTED THINGSPEAK");
+}
+
+function readCookie(name) {
+  let key = name + "=";
+  let cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    let cookie = cookies[i];
+    while (cookie.charAt(0) === ' ') {
+      cookie = cookie.substring(1, cookie.length);
+    }
+    if (cookie.indexOf(key) === 0) {
+      return cookie.substring(key.length, cookie.length);
+    }
+  }
+  return null;
 }
