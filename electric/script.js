@@ -38,7 +38,7 @@ if (localStorage.userIsIshanGoel !== 'yes') {
 
 function end() {
   if (countview) {
-    thingspeak(elapsedTime / 60000); //minutes
+    thingspeak(elapsedTime / 1000); //convert to seconds
   }
 }
 
