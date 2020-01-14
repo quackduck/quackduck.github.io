@@ -31,10 +31,13 @@ window.addEventListener('focus', focus);
 window.addEventListener('blur', blur);
 window.addEventListener('beforeunload', beforeunload);
 
-var isowner = "false" //readCookie(isowner);
+
+if (localStorage.userIsIshanGoel !== 'yes') {
+  countview = true;
+}
 
 function end() {
-  if (isowner == "true") {} else {
+  if (countview) {
     thingspeak(elapsedTime / 60000); //minutes
   }
 }
