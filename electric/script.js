@@ -34,6 +34,8 @@ window.addEventListener('beforeunload', beforeunload);
 
 if (localStorage.userIsIshanGoel !== 'yes') {
   countview = true;
+} else {
+  countview = false;
 }
 
 function end() {
@@ -66,6 +68,11 @@ function submit() {
       electcarcost += 24200;
     }
   }
+  var extraelectcost = parseFloat(document.getElementById("extraelectcost").value);
+  if (!isNaN(extraelectcost)) {
+    electcarcost += extraelectcost;
+  }
+
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
   var carcost = parseFloat(document.getElementById("carcost").value);
@@ -215,19 +222,4 @@ function thingspeak(datatosend) {
     async: false,
   });
   console.log("EXECUTED THINGSPEAK");
-}
-
-function readCookie(name) {
-  let key = name + "=";
-  let cookies = document.cookie.split(';');
-  for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i];
-    while (cookie.charAt(0) === ' ') {
-      cookie = cookie.substring(1, cookie.length);
-    }
-    if (cookie.indexOf(key) === 0) {
-      return cookie.substring(key.length, cookie.length);
-    }
-  }
-  return null;
 }
