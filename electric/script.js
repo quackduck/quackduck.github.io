@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", function() {
   document.getElementById("compare").onclick = function() {
     scroll()
   };
+  //document.getElementById("hero").style.opacity = "1";
 });
 
 let startDate = new Date();
@@ -91,7 +92,7 @@ function submit() {
     if (isNaN(trips)) {
       document.getElementById("result").innerHTML = "TESLA WINS <br> It won by " + (truncate(gascartotalcost - electcartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
     } else {
-      document.getElementById("result").innerHTML = "TESLA WINS <br> It won by " + (truncate(gascartotalcost - electcartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost) + " AED per year" + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
+      document.getElementById("result").innerHTML = "TESLA WINS <br> It won by " + (truncate(gascartotalcost - electcartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost) + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
     }
 
   } else if (electcartotalcost == gascartotalcost) {
@@ -105,7 +106,7 @@ function submit() {
     if (isNaN(trips)) {
       document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
     } else {
-      document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost) + " AED" + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
+      document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost) + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
     }
 
   }
@@ -198,7 +199,6 @@ function truncate(val) {
 
 function scroll() {
   document.getElementById('scroll').scrollIntoView(true);
-  console.log("done");
 }
 
 function curchange() {
@@ -214,12 +214,10 @@ function thingspeak(datatosend) {
 
   $.ajax({
 
-    url: "https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ",
-    type: "GET",
-    data: {
-      "field1": data
-    },
-    async: false,
-  });
-  console.log("EXECUTED THINGSPEAK");
-}
+        url: "https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ",
+        type: "GET",
+        data: {
+          "field1": data
+        },
+        async: false,
+      }

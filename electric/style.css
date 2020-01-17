@@ -10,8 +10,31 @@ html {
 body {
   font-family: Futura, Verdana, sans-serif;
   background-color: papayawhip;
+  margin: 0;
+}
+
+#hero1 {
+  background-image: url("bluetesla.jpg");
+}
+
+#hero2 {
+  background-image: url("redtesla.jpg");
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition-duration: 0s;
+  opacity: 1;
+}
+
+#main {
+  margin: 0% 10% 0% 10%;
   width: 80%;
-  margin: auto;
 }
 
 input {
@@ -94,13 +117,6 @@ a:hover {
 .feedsubmitactive:active {
   transition: 0s;
   color: rgba(255, 255, 255, 0);
-}
-
-#cares {
-  color: blue;
-  font-weight: 400;
-  font-family: courier, monospace;
-  font-size: 1.3em;
 }
 
 .detail {
