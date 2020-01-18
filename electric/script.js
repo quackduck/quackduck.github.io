@@ -214,10 +214,11 @@ function thingspeak(datatosend) {
 
   $.ajax({
 
-        url: "https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ",
-        type: "GET",
-        data: {
-          "field1": data
-        },
-        async: false,
-      }
+    url: "https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ",
+    type: "GET",
+    data: {
+      "field1": data
+    },
+    async: false,
+  });
+}
