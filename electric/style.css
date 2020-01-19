@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  font-family: Futura, Verdana, sans-serif;
+  font-family: Futura, Nunito, Verdana, sans-serif;
   background-color: papayawhip;
   margin: 0;
 }
@@ -46,7 +46,7 @@ input {
   outline: none;
   border-width: 0px;
   padding: 5px 20px;
-  font-family: Futura, Verdana, sans-serif;
+  font-family: Futura, Nunito, Verdana, sans-serif;
   border-radius: 20px;
 }
 
@@ -93,14 +93,14 @@ a:hover {
   border: none;
   width: 100%;
   font-size: 1em;
-  font-family: Futura, Verdana, sans-serif;
+  font-family: Futura, Nunito, Verdana, sans-serif;
   resize: none;
   transition: 0s;
 }
 
 ::placeholder {
   color: grey;
-  font-family: Futura, Verdana, sans-serif;
+  font-family: Futura, Nunito, Verdana, sans-serif;
 }
 
 .feedsubmit {
@@ -108,7 +108,7 @@ a:hover {
   padding: 5px 20px;
   margin: 0px 0px 20px 0px;
   font-size: 1em;
-  font-family: Futura, Verdana, sans-serif;
+  font-family: Futura, Nunito, Verdana, sans-serif;
   transition: 0.3s;
   outline: none;
   border: none;
@@ -131,7 +131,7 @@ a:hover {
 
 .dropdowns {
   font-size: 1em;
-  font-family: Futura, Verdana, sans-serif;
+  font-family: Futura, Nunito, Verdana, sans-serif;
   background-color: papayawhip;
   color: blue;
   border: none;
