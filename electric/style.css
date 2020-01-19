@@ -61,11 +61,16 @@ input {
   color: red;
 }
 
+h1 {
+  font-family: Nunito, Futura, Verdana, sans-serif;
+}
+
 h3 {
   background-color: rgba(255, 255, 100, 0.5);
   margin: 20px 0px;
   padding: 20px;
   border-radius: 20px;
+  font-family: Nunito, Futura, Verdana, sans-serif;
 }
 
 a {
