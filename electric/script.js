@@ -74,6 +74,7 @@ function submit() {
     electcarcost += extraelectcost;
   }
 
+  var result = "";
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
   var carcost = parseFloat(document.getElementById("carcost").value);
@@ -89,27 +90,24 @@ function submit() {
   var totaltaxicost = years * ((6.5 * trips) + (2 * distance));
 
   if (electcartotalcost < gascartotalcost) {
-    if (isNaN(trips)) {
-      document.getElementById("result").innerHTML = "TESLA WINS <br> It won by " + (truncate(gascartotalcost - electcartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
-    } else {
-      document.getElementById("result").innerHTML = "TESLA WINS <br> It won by " + (truncate(gascartotalcost - electcartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost) + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
-    }
-
-  } else if (electcartotalcost == gascartotalcost) {
-    if (isNaN(trips)) {
-      document.getElementById("result").innerHTML = "Uhhh this is awkward. The cost is the same";
-    } else {
-      document.getElementById("result").innerHTML = "Uhhh this is awkward. The cost is the same" + "<br> Using just Dubai Taxi instead would cost " + totaltaxicost;
-    }
-
-  } else {
-    if (isNaN(trips)) {
-      document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
-    } else {
-      document.getElementById("result").innerHTML = "GAS CAR WINS and goes on to destroy earth <br> It won by " + (truncate(electcartotalcost - gascartotalcost)) + " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>" + "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost) + " <br> Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
-    }
-
+    result = "TESLA WINS <br> It won by " + truncate(gascartotalcost - electcartotalcost);
+  } else if (electcartotalcost > gascartotalcost) {
+    result = "GAS CAR WINS and goes on to destroy earth <br> It won by " + truncate(electcartotalcost - gascartotalcost);
   }
+
+  if (electperyear < gasperyear) {
+    result += " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>";
+  } else {
+    result += " <br> Savings per year with gas: " + (Math.trunc(100 * (electperyear - gasperyear))) / 100 + "<br>";
+  }
+
+  result += "<br>" + "Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
+
+  if (!isNaN(trips)) {
+    result += "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost)
+  }
+
+  document.getElementById("result").innerHTML = result;
 
   if (isNaN(mileage) || isNaN(gascost) || isNaN(carcost) || isNaN(maintcost) || isNaN(electcost) || isNaN(distance) || isNaN(years)) {
     document.getElementById("result").innerHTML = "Fill in the values and the result will be shown here";
