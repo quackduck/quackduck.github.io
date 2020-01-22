@@ -2,6 +2,11 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+}
+
 * {
   box-sizing: border-box;
   transition: 0.5s;
