@@ -22,6 +22,12 @@ body {
   background-image: url("bluetesla.jpg");
 }
 
+.hidden {
+  opacity: 0;
+  font-size: 3em;
+  text-align: center;
+}
+
 .heroinner {
   font-size: 3em;
   text-align: center;

@@ -16,9 +16,9 @@
   <link rel="icon" href="shock.png">
 </head>
 
-<body onkeyup="submit()" onclick="submit()" onkeydown="submit()" onkeypress="submit()" onunload="end()">
+<body onkeyup="submit()" onclick="submit()" onkeydown="submit()" onkeypress="submit()" onunload="end()" onload="animateHTML().init();">
   <section class="hero" id="hero1">
-    <div class="heroinner">
+    <div class="hidden" id="hero1inner">
       <br>
       <br>
       Switch To Electric
@@ -124,7 +124,7 @@
 
   </main>
   <section class="hero" id="hero2">
-    <div class="heroinner">
+    <div class="hidden" id="hero2inner">
       <br>
       <br>
       It's Better.
