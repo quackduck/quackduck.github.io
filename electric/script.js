@@ -220,3 +220,49 @@ function thingspeak(datatosend) {
     async: false,
   });
 }
+
+var animateHTML = function() {
+  var elems;
+  var windowHeight;
+
+  function init() {
+
+    elems = document.querySelectorAll('.hidden');
+    windowHeight = window.innerHeight;
+    addEventHandlers();
+    checkPosition();
+  }
+
+  function addEventHandlers() {
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', init);
+  }
+
+  function checkPosition() {
+    for (var i = 0; i < elems.length; i++) {
+
+      var positionFrom = elems[i].getBoundingClientRect().bottom;
+
+      if (positionFrom - windowHeight <= 0) {
+        elems[i].className = elems[i].className.replace(
+          'hidden',
+          'heroinner'
+        );
+      }
+
+      if ((positionFrom - windowHeight > 1) || (positionFrom < 0)) {
+        elems[i].className = elems[i].className.replace(
+          'heroinner',
+          'hidden'
+        );
+      }
+
+
+
+    }
+  }
+
+  return {
+    init: init
+  };
+};
