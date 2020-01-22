@@ -22,9 +22,36 @@ body {
   background-image: url("bluetesla.jpg");
 }
 
-#hero1inner {
+.heroinner {
   font-size: 3em;
   text-align: center;
+  animation-name: fadein;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 #hero2 {
