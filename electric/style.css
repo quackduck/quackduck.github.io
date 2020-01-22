@@ -22,11 +22,17 @@ body {
   background-image: url("bluetesla.jpg");
 }
 
+#hero1inner {
+  font-size: 3em;
+  text-align: center;
+}
+
 #hero2 {
   background-image: url("redtesla.jpg");
 }
 
 .hero {
+  cursor: none;
   width: 100vw;
   height: 100vh;
   background-position: center center;
