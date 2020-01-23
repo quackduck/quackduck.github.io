@@ -23,12 +23,12 @@ body {
 }
 
 .hidden {
-  opacity: 0;
   font-size: 3em;
   text-align: center;
   animation-name: fadeout;
-  animation-duration: 4s;
+  animation-duration: 2s;
   animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 .heroinner {
@@ -37,6 +37,7 @@ body {
   animation-name: fadein;
   animation-duration: 4s;
   animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadein {
