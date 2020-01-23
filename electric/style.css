@@ -26,6 +26,9 @@ body {
   opacity: 0;
   font-size: 3em;
   text-align: center;
+  animation-name: fadeout;
+  animation-duration: 4s;
+  animation-timing-function: ease;
 }
 
 .heroinner {
@@ -55,8 +58,24 @@ body {
     opacity: 0;
   }
 
+  10% {
+    opacity: 0;
+  }
+
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  100% {
+    opacity: 0;
   }
 }
 
