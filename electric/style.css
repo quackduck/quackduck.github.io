@@ -32,21 +32,22 @@ body {
 }
 
 .heroinner {
-  font-size: 3em;
-  text-align: center;
   animation-name: fadein;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
+  font-size: 3em;
+  text-align: center;
 }
 
 @keyframes fadein {
   0% {
+    transform: scale(0.90);
     opacity: 0;
   }
 
   10% {
-    transform: scale(0.95);
+    transform: scale(0.90);
     opacity: 0;
   }
 
@@ -58,28 +59,31 @@ body {
 
 @-webkit-keyframes fadein {
   0% {
+    transform: scale(0.90);
     opacity: 0;
   }
 
   10% {
+    transform: scale(0.90);
     opacity: 0;
   }
 
   100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
 
 @keyframes fadeout {
   100% {
-    transform: scale(0.95);
+    transform: scale(0.90);
     opacity: 0;
   }
 }
 
 @-webkit-keyframes fadeout {
   100% {
-    transform: scale(0.95);
+    transform: scale(0.90);
     opacity: 0;
   }
 }
