@@ -46,10 +46,12 @@ body {
   }
 
   10% {
+    transform: scale(0.95);
     opacity: 0;
   }
 
   100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -70,12 +72,14 @@ body {
 
 @keyframes fadeout {
   100% {
+    transform: scale(0.95);
     opacity: 0;
   }
 }
 
 @-webkit-keyframes fadeout {
   100% {
+    transform: scale(0.95);
     opacity: 0;
   }
 }
