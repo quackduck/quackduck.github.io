@@ -100,9 +100,15 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   transition-duration: 0s;
   opacity: 1;
+}
+
+@supports (background-attachment: fixed) {
+  .hero {
+    background-attachment: fixed;
+  }
 }
 
 main {
