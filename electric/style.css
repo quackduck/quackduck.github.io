@@ -100,7 +100,6 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: scroll;
   transition-duration: 0s;
   opacity: 1;
 }
