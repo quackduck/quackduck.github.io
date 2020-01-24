@@ -100,7 +100,7 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   transition-duration: 0s;
   opacity: 1;
 }
