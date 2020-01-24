@@ -6,6 +6,13 @@ window.addEventListener("DOMContentLoaded", function() {
   //document.getElementById("hero").style.opacity = "1";
 });
 
+if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i)) {
+  var all = document.getElementsByClassName("hero");
+  for (var i = 0; i < all.length; i++) {
+    all[i].style.backgroundAttachment = "scroll";
+  }
+}
+
 let startDate = new Date();
 let elapsedTime = 0;
 let data = 0
