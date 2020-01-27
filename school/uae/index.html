@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!--
+
+
+
+
+
+╔╦╗┌─┐┌┬┐┌─┐
+║║║├─┤ ││├┤
+╩ ╩┴ ┴─┴┘└─┘
+
+  ████████▄   ███    █▄     ▄████████  ▄████████    ▄█   ▄█▄ ████████▄  ███    █▄   ▄████████    ▄█   ▄█▄
+  ███    ███  ███    ███   ███    ███ ███    ███   ███ ▄███▀ ███   ▀███ ███    ███ ███    ███   ███ ▄███▀
+  ███    ███  ███    ███   ███    ███ ███    █▀    ███▐██▀   ███    ███ ███    ███ ███    █▀    ███▐██▀
+  ███    ███  ███    ███   ███    ███ ███         ▄█████▀    ███    ███ ███    ███ ███         ▄█████▀
+  ███    ███  ███    ███ ▀███████████ ███        ▀▀█████▄    ███    ███ ███    ███ ███        ▀▀█████▄
+  ███    ███  ███    ███   ███    ███ ███    █▄    ███▐██▄   ███    ███ ███    ███ ███    █▄    ███▐██▄
+  ███  ▀ ███  ███    ███   ███    ███ ███    ███   ███ ▀███▄ ███   ▄███ ███    ███ ███    ███   ███ ▀███▄
+   ▀██████▀▄█ ████████▀    ███    █▀  ████████▀    ███   ▀█▀ ████████▀  ████████▀  ████████▀    ███   ▀█▀
+                                                           ▀                                            ▀
+╔╗ ┬ ┬
+╠╩╗└┬┘
+╚═╝ ┴
+
+
+Site Online At quackduck.github.io/school/uae/
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ishan Goel">
+  <title>Shout About UAE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="icon" href="images/uae.png">
+  <style>
+    @media only screen and (max-width: 1389px) and (min-width: 971px) {
+      .notes {
+        margin: 0% 0% 0% 6%;
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .notes {
+        margin: 0% 0% 0% 6%;
+      }
+    }
+
+    @media only screen and (max-width: 550px) {
+      .notes {
+        width: 100%;
+        margin: 0%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body onload="newvisitor()" onunload="end()" onoffline="offline()" ononline="online()">
+  <div class="main">
+
+    <div class="tab">
+      <a href="attractions.html"><button class="tab1">Attractions</button></a>
+      <a href="unique-laws.html"><button class="tab2">Unique Laws</button></a>
+      <a href="everyday-info.html"><button class="tab3">Everyday Info</button></a>
+      <a href="history-politics.html"><button class="tab4">History & Politics</button></a>
+    </div>
+
+
+    <a href="./">
+      <div class="title">
+        <h1 id="open">Shout About UAE</h1>
+      </div>
+    </a>
+
+
+    <div class="text">
+      <p>The purpose of this site is to inform you, surprise you, and help you with life in Dubai and the <abbr title="United Arab Emirates">UAE</abbr>. This site contains a vast range of information: from good restaurants and attractions (like the
+        Burj Khalifa) to communities and transport options, our diverse range of content aims to cater to the needs of everyone. We will also help you find out about good schools, hospitals and extremely important info like emergency numbers of the
+        Police or Ambulance
+        <br>
+        <br>
+        Dubai is a wonderful hub of technology, culture and architecture. The purpose of this website is to help you navigate and discover this city's many attractions, and make yourself comfortable here. Use this website as a guide to overcoming the
+        many challenges you may face as an immigrant. It contains information about transport, laws, authorities and more, that will be vital to your everyday life here.</p>
+    </div>
+
+
+    <div class="images">
+      <img src="images/alarab.jpg" class="image1" alt="A photo of the Burj Al Arab building in Dubai ">
+      <div class="imagesection">
+        <img src="images/green.jpg" class="image2" alt="A photo showing a garden with a backdrop of buildings">
+        <img src="images/desert.jpg" class="image3" alt="A photo showing a desert safari">
+      </div>
+    </div>
+
+
+    <textarea id="mytextarea" class="notes"
+      placeholder="You can take notes here! On the bottom right corner of this box is a handle you can use to resize this box. At the bottom of this page are two buttons you can use to email yourself your notes or download them instead"></textarea>
+
+
+    <div class="chart">
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/902701/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&type=line"></iframe>
+    </div>
+
+    <button onclick="email()" class="email">Email me my notes!</button>
+    <button onclick="download()" class="email">Download instead</button>
+
+  </div>
+  <div class="footer">
+    <em>Code</em> for this website <a href="https://github.com/quackduck/quackduck.github.io" class="codelink" target="_blank"> here</a>
+    <br> <br>
+    <span style="font-size: 1.2em">Contact Me</span>
+    <br>
+    <a href="mailto:goelishan2005@gmail.com" target="_blank" style="color: blue">Email</a>
+    <br>
+    <a href="tel:+971585671004" style="color: blue" id="showmobile">Call</a>
+    <span id="showdesktop">Call +971585671004</span>
+    <br>
+    <br>
+    <p class="copyright">Copyright &copy; 2019 Ishan Goel All Rights Reserved.</p>
+  </div>
+
+  <body>
+
+</html>
