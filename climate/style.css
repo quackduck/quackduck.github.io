@@ -9,6 +9,7 @@ body {
   animation-fill-mode: forwards;
   animation-timing-function: ease;
   padding: 0%;
+  width: 100%;
 }
 
 @keyframes fadein {
