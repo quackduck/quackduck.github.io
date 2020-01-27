@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+  /*display: flow-root;*/
+  overflow: auto;
+}
+
+.main {
+  width: 80%;
+  margin: 2% 10%;
+  display: flow-root;
+}
+
+.tab {
+  width: 100%;
+  margin: auto;
+  display: flow-root;
+}
+
+.tab button {
+  float: left;
+  border-right: 0px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 0px;
+  transition: 0.3s;
+  font-family: Futura, Verdana, sans-serif;
+  font-size: 1.2em;
+  width: 25%;
+  display: flow-root;
+  background-color: #ffc400;
+  color: black;
+}
+
+.tab {
+  border-right: 1px solid black;
+}
+
+.tab button:hover {
+  background-color: #f50;
+  color: white;
+}
+
+.tab button:active {
+  color: white;
+}
+
+body {
+  background-image: url("images/fromthetop.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: 2s;
+  background-color: #1a2228;
+}
+
+.title h1 {
+  font-family: "Courier", Futura, Monospace;
+  text-align: center;
+  font-weight: lighter;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px 1px 1px 1px;
+  background-color: #ffc400;
+  padding: 8px 0px;
+  transition: 0.3s;
+  margin: 0px;
+  color: black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.title h1:hover {
+  background-color: #f50;
+  color: white;
+}
+
+.text {
+  font-family: Futura, Verdana, Sans-serif;
+  font-size: 1em;
+  float: left;
+  width: 47%;
+  padding: 20px;
+  background-color: rgba(30, 52, 103, 0.5);
+  color: white;
+  margin: 50px 0px;
+  display: flow-root;
+}
+
+p {
+  margin: 0px;
+}
+
+.images {
+  width: 47%;
+  float: right;
+  margin: 50px 0px;
+  display: flow-root;
+}
+
+.image1 {
+  float: left;
+  width: 50%;
+  padding: 0px 5px 0px 0px;
+  display: flow-root;
+}
+
+.imagesection {
+  width: 50%;
+  float: right;
+  padding: 0px 0px 0px 5px;
+  display: flow-root;
+}
+
+.image2 {
+  width: 100%;
+  padding: 0px 0px 5px 0px;
+  display: flow-root;
+}
+
+.image3 {
+  width: 100%;
+  padding: 5px 0px 0px 0px;
+  display: flow-root;
+}
+
+img {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+img:hover {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+title {
+  display: none;
+}
+
+abbr {
+  display: inline;
+  text-decoration: none;
+}
+
+#open {
+  background-color: #d00000;
+  color: white;
+}
+
+#open:hover {
+  background-color: #fa0;
+  color: black;
+}
+
+.container {
+  width: 100%;
+}
+
+.chart {
+  width: 450px;
+  height: 260px;
+  opacity: 0.5;
+  transition: 0.3s;
+  margin: 50px auto 50px auto;
+}
+
+.chart:hover {
+  opacity: 1.0;
+}
+
+.notes {
+  transition: 0.3s;
+  background-color: rgba(30, 52, 103, 0.5);
+  height: 200px;
+  width: 47%;
+  margin: 0% 0%;
+  font-size: 1em;
+  font-family: Futura, Verdana, sans-serif;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 20px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.75;
+}
+
+.footer {
+  width: 100%;
+  font-size: 1em;
+  font-family: Futura, Verdana, sans-serif;
+  background-color: #ffc400;
+  padding: 20px 10%;
+}
+
+body {
+  margin: 0%;
+}
+
+.codelink {
+  color: blue;
+}
+
+.copyright {
+  color: #505050;
+  font-family: Futura, Verdana, sans-serif;
+  font-size: 0.8em;
+}
+
+em {
+  font-style: normal;
+  font-family: courier, futura, verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1.2em
+}
+
+.email {
+  background-color: #ffc400;
+  padding: 7px 20px;
+  border: 1px solid black;
+  font-family: futura, verdana, sans-serif;
+  font-size: 1em;
+  outline: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.email:hover {
+  background-color: #d00000;
+  color: white;
+}
+
+@media only screen and (max-width: 970px) {
+  body {
+    background-image: url("images/burj1.jpg");
+    transition: 2s;
+  }
+
+  .tab button {
+    transition: 0.3s;
+    width: 50%;
+    border-right: 0px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 0px solid black;
+  }
+
+  .tab {
+    border-bottom: 1px solid black;
+  }
+
+  .imagesection {
+    width: 100%;
+    padding: 5px 0px 0px 0px;
+  }
+
+  .image1 {
+    width: 100%;
+    padding: 0px 0px 5px 0px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    background-image: url("images/mobilebackground3.jpg");
+    background-color: #7c8ea8;
+    transition: 2s;
+  }
+
+  .tab button {
+    transition: 0.3s;
+    width: 100%;
+    border-right: 0px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 0px solid black;
+  }
+
+  .tab {
+    border-bottom: 1px solid black;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .images {
+    width: 100%;
+  }
+
+  .notes {
+    width: 100%;
+    margin: 0%;
+  }
+}
