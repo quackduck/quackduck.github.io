@@ -8,7 +8,7 @@ body {
   animation-duration: 7s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
-  padding: 5%;
+  padding: 0%;
 }
 
 @keyframes fadein {

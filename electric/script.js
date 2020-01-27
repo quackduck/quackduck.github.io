@@ -3,7 +3,6 @@ window.addEventListener("DOMContentLoaded", function() {
   document.getElementById("compare").onclick = function() {
     scroll()
   };
-  //document.getElementById("hero").style.opacity = "1";
 });
 
 let startDate = new Date();
@@ -114,19 +113,6 @@ function submit() {
   }
 }
 
-
-
-function request(datatosend) {
-  let data = datatosend;
-  $.ajax({
-    url: "https://maker.ifttt.com/trigger/feedback/with/key/iY46qstJctzVcVh1IGrAFSlTK5WHuPmakgwERnn-WnW",
-    type: "POST",
-    data: {
-      "value1": data
-    },
-  });
-}
-
 function sendfeedback() {
   var data = document.getElementById("feedtext").value;
   if (!data.match(/\S/)) {
@@ -207,18 +193,12 @@ function curchange() {
   submit();
 }
 
-function thingspeak(datatosend) {
-  let data = datatosend;
-
-  $.ajax({
-
-    url: "https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ",
-    type: "GET",
-    data: {
-      "field1": data
-    },
-    async: false,
-  });
+function thingspeak(time) {
+  var data = "field1=" + time;
+  var request = new XMLHttpRequest();
+  request.open('POST', 'https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ', false);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.send(data);
 }
 
 var animateHTML = function() {
