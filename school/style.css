@@ -23,3 +23,7 @@ main {
   margin: 0% 10% 0% 10%;
   width: 80%;
 }
+
+h1 {
+  font-family: Nunito, Futura, Verdana, sans-serif;
+}
