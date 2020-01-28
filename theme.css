@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: papayawhip;
+  font-family: Futura, Nunito, Verdana, sans-serif;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+}
+
+a {
+  color: #4d96c6;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #4d96c6;
+  border-bottom: 2px solid #4d96c6;
+}
+
+main {
+  margin: 0% 10% 0% 10%;
+  width: 80%;
+}
+
+h1 {
+  font-family: Nunito, Futura, Verdana, sans-serif;
+}
+
+h3 {
+  background-color: rgba(255, 255, 100, 0.5);
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: Nunito, Futura, Verdana, sans-serif;
+}
+
+@keyframes fadein {
+  0% {
+    transform: scale(0.90);
+    opacity: 0;
+  }
+
+  10% {
+    transform: scale(0.90);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    transform: scale(0.90);
+    opacity: 0;
+  }
+
+  10% {
+    transform: scale(0.90);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  100% {
+    transform: scale(0.90);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  100% {
+    transform: scale(0.90);
+    opacity: 0;
+  }
+}
+
+input {
+  background-color: papayawhip;
+  color: blue;
+  font-size: 1em;
+  margin: 5px 20px 20px 20px;
+  outline: none;
+  border-width: 0px;
+  padding: 5px 20px;
+  font-family: Futura, Nunito, Verdana, sans-serif;
+  border-radius: 20px;
+}
+
+.text {
+  background-color: rgba(35, 181, 211, 0.5);
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 20px
+}
+
+::placeholder {
+  color: grey;
+  font-family: Futura, Nunito, Verdana, sans-serif;
+}
+
+button {
+  background-color: yellowgreen;
+  padding: 5px 20px;
+  margin: 0px 0px 20px 0px;
+  border-radius: 20px;
+  font-size: 1em;
+  font-family: Futura, Nunito, Verdana, sans-serif;
+  transition: 0.3s;
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  background-color: #6667ff;
+  color: papayawhip;
+}
+
+button:active {
+  transition: 0s;
+  color: rgba(255, 255, 255, 0);
+}
+
+.dropdowns {
+  font-size: 1em;
+  font-family: Futura, Nunito, Verdana, sans-serif;
+  background-color: papayawhip;
+  color: blue;
+  border: none;
+  outline: none;
+}
+
+#dropcontain {
+  margin: 0;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 1em;
+  font-family: Futura, Nunito, Verdana, sans-serif;
+  resize: none;
+  transition: 0s;
+}
+
+::placeholder {
+  color: grey;
+  font-family: Futura, Nunito, Verdana, sans-serif;
+}

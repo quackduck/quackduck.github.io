@@ -8,7 +8,9 @@
   <title>Switch ⚡️</title>
   <link rel="icon" href="shock.png">
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../theme.css">
   <link rel="stylesheet" href="style.css">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ishan Goel">
@@ -27,7 +29,7 @@
   <main id="main">
     <h1>Find out how your backwords 1800s technology gas car compares to a Model 3</h1>
 
-    <button id="compare" class="text feedsubmit feedsubmithover feedsubmitactive">Start Comparing</button>
+    <button id="compare">Start Comparing</button>
 
 
 
@@ -56,10 +58,10 @@
         <option value="india" class="options">India</option>
       </select>
       <br>
-      <span id="currency">Please give all costs in Dirhams(AED)</span>
+      <span id="currency" class="red">Please give all costs in Dirhams(AED)</span>
     </p>
     <div id="inputs" class="text">
-      <button class="text feedsubmit feedsubmithover feedsubmitactive" id="autofillbutton" onclick="autofill()">Autofill Common Values</button>
+      <button id="autofillbutton" onclick="autofill()">Autofill Common Values</button>
       <br>
 
       Full Self Driving (Autopilot is already included).
@@ -112,7 +114,7 @@
       <a target="_blank" href="https://evannex.com/blogs/news/total-cost-of-ownership-tesla-model-3-vs-toyota-camry">Comparing a Toyota Camry to the Tesla Model 3</a></p>
     <div id="feedback">
       <textarea rows="3" id="feedtext" class="text" placeholder="Any improvements or features I could add? Please also send me your Name and Email!"></textarea>
-      <button onclick="sendfeedback()" class="text feedsubmithover feedsubmitactive feedsubmit" id="feedsubmit">Submit</button>
+      <button onclick="sendfeedback()" class="feedsubmithover feedsubmitactive" id="feedsubmit">Submit</button>
     </div>
     <p class="text">
       Made by someone who <a target="_blank" href="https://countdown.ted.com/"><span id="cares">Cares</span></a>

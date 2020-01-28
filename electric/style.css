@@ -2,20 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  display: none;
-  width: 0px;
-}
-
 * {
   box-sizing: border-box;
   transition: 0.5s;
-}
-
-body {
-  font-family: Futura, Nunito, Verdana, sans-serif;
-  background-color: papayawhip;
-  margin: 0;
 }
 
 #hero1 {
@@ -39,54 +28,6 @@ body {
   animation-fill-mode: forwards;
   font-size: 3em;
   text-align: center;
-}
-
-@keyframes fadein {
-  0% {
-    transform: scale(0.90);
-    opacity: 0;
-  }
-
-  10% {
-    transform: scale(0.90);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadein {
-  0% {
-    transform: scale(0.90);
-    opacity: 0;
-  }
-
-  10% {
-    transform: scale(0.90);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeout {
-  100% {
-    transform: scale(0.90);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  100% {
-    transform: scale(0.90);
-    opacity: 0;
-  }
 }
 
 #hero2 {
@@ -117,7 +58,6 @@ main {
 
 input {
   background-color: papayawhip;
-  /*#FFF7E9;*/
   color: blue;
   font-size: 1em;
   margin: 5px 20px 20px 20px;
@@ -139,67 +79,24 @@ input {
   color: red;
 }
 
-h1 {
-  font-family: Nunito, Futura, Verdana, sans-serif;
-}
-
-h3 {
-  background-color: rgba(255, 255, 100, 0.5);
-  margin: 20px 0px;
-  padding: 20px;
-  border-radius: 20px;
-  font-family: Nunito, Futura, Verdana, sans-serif;
-}
-
-a {
-  color: #4d96c6;
-  /*#6667ff;*/
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: 0.2s;
-}
-
-a:hover {
-  color: #4d96c6;
-  /*black*/
-  border-bottom: 2px solid #4d96c6;
-  /*#6667ff;*/
-}
-
-#feedtext {
-  outline: none;
-  border: none;
-  width: 100%;
-  font-size: 1em;
-  font-family: Futura, Nunito, Verdana, sans-serif;
-  resize: none;
-  transition: 0s;
-}
-
-::placeholder {
-  color: grey;
-  font-family: Futura, Nunito, Verdana, sans-serif;
-}
-
-.feedsubmit {
-  background-color: yellowgreen;
-  padding: 5px 20px;
-  margin: 0px 0px 20px 0px;
-  font-size: 1em;
-  font-family: Futura, Nunito, Verdana, sans-serif;
-  transition: 0.3s;
-  outline: none;
-  border: none;
-}
-
-.feedsubmithover:hover {
+.feedsubmiteffects:hover {
   background-color: #6667ff;
   color: #FFF7E9;
 }
 
-.feedsubmitactive:active {
+.feedsubmiteffects:active {
   transition: 0s;
   color: rgba(255, 255, 255, 0);
+}
+
+.nohoveractive:hover {
+  background-color: yellowgreen;
+  color: inherit;
+}
+
+.nohoveractive:active {
+  background-color: yellowgreen;
+  color: inherit;
 }
 
 .detail {
@@ -214,10 +111,6 @@ a:hover {
   color: blue;
   border: none;
   outline: none;
-}
-
-#currency {
-  color: red;
 }
 
 #dropcontain {
