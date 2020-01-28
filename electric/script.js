@@ -121,13 +121,22 @@ function sendfeedback() {
     request(data);
     document.getElementById("feedsubmit").innerHTML = "Sent!";
     document.getElementById("feedsubmit").removeAttribute("onclick");
-    document.getElementById("feedsubmit").classList.remove("feedsubmithover");
-    document.getElementById("feedsubmit").classList.remove("feedsubmitactive");
+    document.getElementById("feedsubmit").classList.remove("feedsubmiteffects");
+    document.getElementById("feedsubmit").classList.add("nohoveractive");
   }
 }
 
+function request(datatosend) {
+  let feedback = datatosend;
+  var data = "value1=" + feedback;
+  var request = new XMLHttpRequest();
+  request.open('POST', 'https://maker.ifttt.com/trigger/feedback/with/key/iY46qstJctzVcVh1IGrAFSlTK5WHuPmakgwERnn-WnW', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.send(data);
+}
+
 function autofill() {
-  window.isautofill = true; // window makes it a global variable
+  window.isautofill = true; // window.foo makes foo a global variable
   if (document.getElementById("country").value == "usa") {
     var mileage = 10;
     var gascost = 2.7;
@@ -236,9 +245,6 @@ var animateHTML = function() {
           'hidden'
         );
       }
-
-
-
     }
   }
 
