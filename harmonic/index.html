@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Harmonic</title>
+  <script src="script.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="../theme.css">
+  <link rel="icon" href="">
+</head>
+
+<body>
+  <main>
+    <h1>Harmonic Series Calculator</h1>
+    <p class="text">
+      Enter a number to calculate the sum of the series to that many values
+      <br>
+      <input type=" number" id="harmonicinput" onkeyup="updateharmonic()">
+      <span id="harmonicresult"></span>
+      <br>
+      Enter a number to calculate at which number the sum is more than or equal to your number (the opposite of the first calculator)
+      <br>
+      <input type="number" id="revharmonicinput" onkeyup="updaterevharmonic()">
+      <span id="revharmonicresult"></span>
+    </p>
+  </main>
+
+</body>
+
+</html>
