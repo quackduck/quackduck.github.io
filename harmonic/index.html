@@ -6,6 +6,7 @@
   <title>Harmonic</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../theme.css">
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" charset="utf-8"></script>
   <link rel="icon" href="icon.png">
 </head>
@@ -13,6 +14,35 @@
 <body>
   <main>
     <h1>Harmonic Series Calculator</h1>
+    <p class="text">
+      The Harmonic series is:
+      <br>
+      <span class="mono">1 + 1/2 + 1/3 + 1/4 + 1/5...</span>
+      <br>
+      <br>
+      It is a divergent series, which means that the partial sums of this series do not approach a fixed value. Instead, the sum either continually increases or decreases. In this case, the sum increases even though each new term of the series gets
+      smaller and smaller.
+      <br>
+      <br>
+      You might say this is because infinitely many numbers are added. However there are sequences whose partial sums approach a fixed value. An example of this is the sequence:
+      <br>
+      <span class="mono">1 + 1/2 + 1/4 + 1/8 + 1/16...</span>
+      <br>
+      The partial sums of this sequence approaches (but never crosses) 2
+      <br>
+      <br>
+      Proof of divergence:
+      <br>
+      <span class="mono">1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 + 1/7 + 1/8...</span>
+      <br>
+      <span class="mono">1 + 1/2 + 1/4 + 1/4 + 1/8 + 1/8 + 1/8 + 1/8...</span>
+      <br>
+      The first sequence is greater than the second.
+      <br>
+      The infinite sum of the second sequence is infinitely
+      <br>
+      Therefore, the infinite sum of the first sequence is also infinity.
+    </p>
     <p class="text">
       Enter a number to calculate the sum of the series to that many values
       <br>
