@@ -5,46 +5,10 @@ window.addEventListener("DOMContentLoaded", function() {
   };
 });
 
-let startDate = new Date();
-let elapsedTime = 0;
-let data = 0
-
-const focus = function() {
-  startDate = new Date();
-};
-
-const blur = function() {
-  const endDate = new Date();
-  const spentTime = endDate.getTime() - startDate.getTime();
-  elapsedTime += spentTime;
-};
-
-const beforeunload = function() {
-  const endDate = new Date();
-  const spentTime = endDate.getTime() - startDate.getTime();
-  elapsedTime += spentTime;
-
-
-};
-
-window.addEventListener('focus', focus);
-window.addEventListener('blur', blur);
-window.addEventListener('beforeunload', beforeunload);
-
-
-if (localStorage.userIsIshanGoel !== 'yes') {
-  countview = true;
-} else {
-  countview = false;
-}
-
-function end() {
-  if (countview) {
-    thingspeak(elapsedTime / 1000); //convert to seconds
-  }
-}
-
 function submit() {
+
+
+
   var electcarcost = 159900; //159900 is the online price. for the 35000$ car you have to visit a store;
   if (document.getElementById("country").value == "usa") {
     electcarcost = 39990;
@@ -59,7 +23,6 @@ function submit() {
   var range = 410;
   var battkwh = 50;
   if (document.getElementById("fullsd").checked) {
-
     if (document.getElementById("country").value == "usa") {
       electcarcost += 7000;
     } else if (document.getElementById("country").value == "india") {
@@ -72,7 +35,6 @@ function submit() {
   if (!isNaN(extraelectcost)) {
     electcarcost += extraelectcost;
   }
-
   var result = "";
   var mileage = parseFloat(document.getElementById("mileage").value);
   var gascost = parseFloat(document.getElementById("gascost").value);
@@ -87,30 +49,41 @@ function submit() {
   var gasperyear = maintcost + (gascost * (distance / mileage))
   var gascartotalcost = carcost + (gasperyear * years)
   var totaltaxicost = years * ((6.5 * trips) + (2 * distance));
-
   if (electcartotalcost < gascartotalcost) {
     result = "TESLA WINS <br> It won by " + truncate(gascartotalcost - electcartotalcost);
   } else if (electcartotalcost > gascartotalcost) {
     result = "GAS CAR WINS and goes on to destroy earth <br> It won by " + truncate(electcartotalcost - gascartotalcost);
   }
-
   if (electperyear < gasperyear) {
     result += " <br> Savings per year with electric: " + (Math.trunc(100 * (gasperyear - electperyear))) / 100 + "<br>";
   } else {
     result += " <br> Savings per year with gas: " + (Math.trunc(100 * (electperyear - gasperyear))) / 100 + "<br>";
   }
-
   result += "<br>" + "Total Tesla Cost: " + truncate(electcartotalcost) + " <br> Total Gas Car Cost: " + truncate(gascartotalcost);
-
   if (!isNaN(trips)) {
     result += "<br> Using just Dubai Taxi instead would cost " + truncate(totaltaxicost)
   }
-
   document.getElementById("result").innerHTML = result;
-
   if (isNaN(mileage) || isNaN(gascost) || isNaN(carcost) || isNaN(maintcost) || isNaN(electcost) || isNaN(distance) || isNaN(years)) {
     document.getElementById("result").innerHTML = "Fill in the values and the result will be shown here";
   }
+}
+
+//SECONDARIES
+
+var iftttkey = "iY46qstJctzVcVh1IGrAFSlTK5WHuPmakgwERnn-WnW";
+var thingkey = "2N1ZM2LM6LRK6UJZ";
+
+function end() {
+  if (countview) {
+    thingspeak(elapsedTime / 1000, thingkey); //convert to seconds
+  }
+}
+
+if (localStorage.userIsIshanGoel !== 'yes') {
+  countview = true;
+} else {
+  countview = false;
 }
 
 function sendfeedback() {
@@ -118,21 +91,12 @@ function sendfeedback() {
   if (!data.match(/\S/)) {
     alert("Please write in your feedback before submitting");
   } else {
-    request(data);
+    ifttt(data, iftttkey);
     document.getElementById("feedsubmit").innerHTML = "Sent!";
     document.getElementById("feedsubmit").removeAttribute("onclick");
     document.getElementById("feedsubmit").classList.remove("feedsubmiteffects");
     document.getElementById("feedsubmit").classList.add("nohoveractive");
   }
-}
-
-function request(datatosend) {
-  let feedback = datatosend;
-  var data = "value1=" + feedback;
-  var request = new XMLHttpRequest();
-  request.open('POST', 'https://maker.ifttt.com/trigger/feedback/with/key/iY46qstJctzVcVh1IGrAFSlTK5WHuPmakgwERnn-WnW', true);
-  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-  request.send(data);
 }
 
 function autofill() {
@@ -181,15 +145,6 @@ function remautofill() {
   document.getElementById("autofillbutton").setAttribute("onclick", "autofill()");
 }
 
-function truncate(val) {
-  if (val < 1) {
-    val = (Math.trunc(100 * val) / 100)
-  } else {
-    val = Math.trunc(val);
-  }
-  return val;
-}
-
 function scroll() {
   document.getElementById('scroll').scrollIntoView(true);
 }
@@ -200,14 +155,6 @@ function curchange() {
     autofill();
   }
   submit();
-}
-
-function thingspeak(time) {
-  var data = "field1=" + time;
-  var request = new XMLHttpRequest();
-  request.open('POST', 'https://api.thingspeak.com/update?api_key=2N1ZM2LM6LRK6UJZ', false);
-  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-  request.send(data);
 }
 
 var animateHTML = function() {
