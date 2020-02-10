@@ -6,9 +6,6 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 function submit() {
-
-
-
   var electcarcost = 159900; //159900 is the online price. for the 35000$ car you have to visit a store;
   if (document.getElementById("country").value == "usa") {
     electcarcost = 39990;
