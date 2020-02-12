@@ -148,7 +148,6 @@ function scroll() {
 
 function curchange() {
   if (window.isautofill) {
-    remautofill();
     autofill();
   }
   submit();
