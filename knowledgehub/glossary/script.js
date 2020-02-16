@@ -16,7 +16,7 @@ function makeclouds() {
   }
   makecloud("HEEHEE", "blehh", 1);
   makecloud("check", "lord gryffin", 2);
-  makecloud("checfk", "lord gryffddewin", 17);
+  makecloud("checfk", "lord gryffddewin", 3);
 }
 
 
