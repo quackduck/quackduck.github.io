@@ -28,9 +28,9 @@ function makeclouds() {
   makecloud("Fauna", "All life present in a particular region, habitat or time", 15);
   makecloud("Flagship Species", "A symbolic species of a habitat", 16);
   makecloud("Flora", "All plants in a region, habitat or time", 17);
-  makecloud("", "", 18);
-  makecloud("", "", 19);
-  makecloud("", "", 20);
+  makecloud("Greenhouse Gases", "Gases that trap heat and contribute to climate change", 18);
+  makecloud("Habitat", "The natural environment of a species", 19);
+  makecloud("Habitat Loss", "When a habitat is no longer able to sustain species", 20);
   makecloud("", "", 21);
   makecloud("", "", 23);
   makecloud("", "", 24);
