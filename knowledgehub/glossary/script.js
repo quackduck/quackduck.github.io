@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 function makeclouds() {
-  for (var i = 1; i <= 64; i++) {
+  for (var i = 1; i <= 59; i++) {
     var canvas = document.createElement("CANVAS"); // Create a <button> element
     canvas.setAttribute("id", "cloud" + i);
     canvas.setAttribute("height", 200);
