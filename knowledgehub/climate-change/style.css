@@ -1,0 +1,77 @@
+html {
+  margin: 0;
+}
+
+main {
+  margin: 0;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Montserrat, Futura, Verdana, sans-serif;
+}
+
+canvas {}
+
+canvas:hover {}
+
+.hero {
+  background-image: url("hero.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition-duration: 0s;
+  opacity: 1;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+main {
+  width: 80%;
+  margin: 0% 10% 0% 10%;
+}
+
+#top {
+  width: 55%;
+  margin: 0% 22.5%;
+  position: fixed;
+  top: 0;
+}
+
+#bottom {
+  width: 100%;
+}
+
+.yellowbg {
+  background-color: yellow;
+}
+
+.greenbg {
+  background-color: greenyellow;
+}
+
+.bluebg {
+  background-color: lightblue;
+}
+
+.big {
+  font-size: 1.5em;
+}
+
+.didyou {
+  color: orange;
+  font-size: 1.1em;
+}
+
+.something {
+  width: 80vw;
+}
