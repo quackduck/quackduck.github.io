@@ -13,7 +13,7 @@ function makeclouds() {
   }
   makecloud("Biodiversity", "Number and types of species in the wild", 1);
   makecloud("Biodiversity Hotspots", "A habitat with a high number of different species", 2);
-  makecloud("Bioindicators", "Species used as a measure of some aspects of an ecosystem's health", 3);
+  makecloud("Bioindicators", "Species used as a measure of an ecosystem's health", 3);
   makecloud("Blue Carbon Sinks", "Coastal ecosystems which store more carbon than land forests", 4);
   makecloud("Camouflage", "Hiding by disguising", 5);
   makecloud("Climate Change", "Human caused long term changes to global climates", 6);
@@ -31,38 +31,45 @@ function makeclouds() {
   makecloud("Greenhouse Gases", "Gases that trap heat and contribute to climate change", 18);
   makecloud("Habitat", "The natural environment of a species", 19);
   makecloud("Habitat Loss", "When a habitat is no longer able to sustain species", 20);
-  makecloud("", "", 21);
-  makecloud("", "", 23);
-  makecloud("", "", 24);
-  makecloud("", "", 25);
-  makecloud("", "", 26);
-  makecloud("", "", 27);
-  makecloud("", "", 28);
-  makecloud("", "", 29);
-  makecloud("", "", 30);
-  makecloud("", "", 31);
-  makecloud("", "", 32);
-  makecloud("", "", 33);
-  makecloud("", "", 34);
-  makecloud("", "", 35);
-  makecloud("", "", 36);
-  makecloud("", "", 37);
-  makecloud("", "", 38);
-  makecloud("", "", 39);
-  makecloud("", "", 40);
-  makecloud("", "", 41);
-  makecloud("", "", 42);
-  makecloud("", "", 43);
-  makecloud("", "", 44);
-  makecloud("", "", 45);
-  makecloud("", "", 46);
-  makecloud("", "", 47);
-  makecloud("", "", 48);
-  makecloud("", "", 49);
-  makecloud("", "", 50);
-
-
-
+  makecloud("Habitat Degradation", "A decline in the quality of a natural habitat", 21);
+  makecloud("Habitat Fragmentation", "A habitat that splits into several small patches", 22);
+  makecloud("Indicator Species", "A species whose status reflects the habitat's", 23);
+  makecloud("Indigenous Species", "Native species", 24);
+  makecloud("Intertidal Zone", "Land exposed to air at low tide and water at high tide", 25);
+  makecloud("Invasive Species", "A foreign species that can have a negative impact", 26);
+  makecloud("IUCN Red List", "A list of threatened species", 27);
+  makecloud("Keystone Species", "A species crucial to the ecosystem", 28);
+  makecloud("Mangroves", "Salt tolerant trees of coastal areas", 29);
+  makecloud("Marine Debris", "Problematic litter in the oceans", 30);
+  makecloud("Marshes", "Soft land with grass covered with water", 31);
+  makecloud("Migrating", "Moving from a place to another", 32);
+  makecloud("Migratory Species", "A species which migrates predictably", 33);
+  makecloud("Mitigation", "Actions minimizing impact on ecosystems", 34);
+  makecloud("Mudflat", "Flat wetlands with no vegetation", 35);
+  makecloud("Natural resources", "Elements of nature which can be used by humans", 36);
+  makecloud("Nocturnal", "Being active during the night and not during day", 37);
+  makecloud("Overharvesting", "Harvesting a resource unsustainably", 38);
+  makecloud("Pollution", "Harmful contamination of the ecosystem", 39);
+  makecloud("Predator", "An organism that lives by eating other organisms", 40);
+  makecloud("Protected Areas", "An area for the protection of habitats and species", 41);
+  makecloud("Relocation", "To move organisms", 42);
+  makecloud("Renewable Energy", "Energy that is replenished fast", 43);
+  makecloud("Reptile", "Cold-blooded, air-breathing, egg-laying vertebrates", 44);
+  makecloud("Reserves", "Fossil fuels and minerals available for extraction", 45);
+  makecloud("Sabkha", "Flat coastal plain with a salt crust", 46);
+  makecloud("Saltmarsh", "Intertidal areas with vegetation", 47);
+  makecloud("Sandy Coastline", "Sediment beaches of carbonate sand", 48);
+  makecloud("Scrub Area", "Area with low trees of low qualiy", 49);
+  makecloud("Seagrass", "Subtidal areas with more than 10% cover of seagrass species.", 50);
+  makecloud("Species", "A unit of biological classification", 51);
+  makecloud("Swamp", "Spongy land filled with water; marsh-like", 52);
+  makecloud("Terrestrial", "Relating to Earth or land", 53);
+  makecloud("Threatened", "A species vulnerable to endangerment", 54);
+  makecloud("Threats", "Something that causes harm", 55);
+  makecloud("Vegetation", "All plants in a region", 56);
+  makecloud("Wadi", "A stony, dry valley which floods when it rains", 57);
+  makecloud("Webbed", "Toes united with a membrane", 58);
+  makecloud("Wetland", "Where the land is covered with water", 59);
 }
 
 function makecloud(word, meaning, id) {
@@ -85,12 +92,12 @@ function makecloud(word, meaning, id) {
   context.fill();
   context.strokeStyle = 'lightblue';
   context.stroke();
-  context.font = "1.3em Futura";
+  context.font = "1.3em arial";
   context.fillStyle = "black";
   context.textAlign = "center";
   context.fillText(word, canvas.width / 2, canvas.height / 2.5);
   canvas.onclick = function() {
-    context.font = "0.8em Futura";
+    context.font = "0.8em arial";
     context.fillStyle = "black";
     context.textAlign = "center";
     context.fillText(meaning, canvas.width / 2, canvas.height / 1.7);
