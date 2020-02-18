@@ -1,0 +1,22 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Montserrat, Futura, Verdana, sans-serif;
+}
+
+canvas {}
+
+canvas:hover {}
+
+main {
+  width: 80%;
+  margin: 0% 10% 0% 10%;
+}
+
+#top {
+  width: 100%;
+}
+
+#bottom {
+  width: 100%;
+}
