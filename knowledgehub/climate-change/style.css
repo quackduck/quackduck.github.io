@@ -10,6 +10,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: Montserrat, Futura, Verdana, sans-serif;
+  line-height: 2em;
 }
 
 canvas {}

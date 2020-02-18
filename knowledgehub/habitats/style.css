@@ -1,12 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  margin: 0;
+}
+
+main {
+  margin: 0;
+}
+
 body {
   margin: 0px;
   padding: 0px;
   font-family: Montserrat, Futura, Verdana, sans-serif;
+  line-height: 2em;
 }
 
 canvas {}
 
 canvas:hover {}
+
+.hero {
+  background-image: url("climate.png");
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition-duration: 0s;
+  opacity: 1;
+  background-attachment: fixed;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
 
 main {
   width: 80%;
@@ -14,9 +55,81 @@ main {
 }
 
 #top {
-  width: 100%;
+  width: 55%;
+  margin: 0% 22.5%;
+  position: fixed;
+  top: 0;
 }
 
 #bottom {
   width: 100%;
+}
+
+.yellowbg {
+  background-color: yellow;
+}
+
+.greenbg {
+  background-color: greenyellow;
+}
+
+.bluebg {
+  background-color: lightblue;
+}
+
+.big {
+  font-size: 1.5em;
+}
+
+.didyou {
+  color: orange;
+  font-size: 1.1em;
+}
+
+.something {
+  width: 80vw;
+}
+
+.greenbox {
+  border: 3px solid green;
+  border-radius: 7px;
+  padding: 1em;
+}
+
+.box {
+  border: 3px solid black;
+  border-radius: 7px;
+  padding: 1em;
+}
+
+.redbox {
+  border: 3px solid red;
+  border-radius: 7px;
+  padding: 1em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 500;
+}
+
+a {
+  color: #4d96c6;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #4d96c6;
+  border-bottom: 2px solid #4d96c6;
+}
+
+.gif {
+  width: 500px;
+  margin: 0 calc(40vw - 250px);
 }
