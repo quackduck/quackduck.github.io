@@ -25,6 +25,7 @@ canvas:hover {}
   background-repeat: no-repeat;
   transition-duration: 0s;
   opacity: 1;
+  background-attachment: fixed;
 }
 
 .red {
@@ -74,4 +75,19 @@ main {
 
 .something {
   width: 80vw;
+}
+
+.box {
+  border: 3px solid black;
+  border-radius: 7px;
+  padding: 1em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+  font-family: Montserrat;
 }
