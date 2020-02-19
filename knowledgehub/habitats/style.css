@@ -1,9 +1,49 @@
 * {
   box-sizing: border-box;
+  overflow: auto;
 }
 
-img {
-  width: 100%;
+.slide {
+  object-fit: cover;
+  height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: fade;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  object-fit: cover;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide1 {
+  width: 100vw;
+  height: 100vh;
 }
 
 html {
@@ -59,6 +99,7 @@ main {
   margin: 0% 22.5%;
   position: fixed;
   top: 0;
+  z-index: 1000;
 }
 
 #bottom {
@@ -130,6 +171,8 @@ a:hover {
 }
 
 .gif {
-  width: 500px;
-  margin: 0 calc(40vw - 250px);
+  /* width: 500px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
