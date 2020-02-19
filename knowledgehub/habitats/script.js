@@ -15,11 +15,11 @@ function carousel(n, dur) {
     x[i].style.display = "none";
 
   }
-  index[n]++;
-  if (index[n] > x.length) {
-    index[n] = 1;
+  index[n - 1]++;
+  if (index[n - 1] > x.length) {
+    index[n - 1] = 1;
   }
-  x[index[n] - 1].style.display = "block";
+  x[index[n - 1] - 1].style.display = "block";
   setTimeout(function() {
     carousel(n, dur)
   }, dur * 1000);
