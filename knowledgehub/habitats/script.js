@@ -1,23 +1,25 @@
 window.addEventListener("DOMContentLoaded", function() {
-  carousel(1, 2);
-  carousel(2, 3);
+  carousel(1, 10);
+  carousel(2, 5);
   carousel(3, 5);
-  carousel(4, 2.5);
-  carousel(5, 2.618);
+  carousel(4, 5);
+  carousel(5, 5);
 });
-var myIndex = 0;
+var index = [0, 0, 0, 0, 0];
 
 function carousel(n, dur) {
   var i;
   var x = document.getElementsByClassName("slide" + n);
   for (i = 0; i < x.length; i++) {
+    x[i].style["animationDuration"] = dur + "s";
     x[i].style.display = "none";
+
   }
-  myIndex++;
-  if (myIndex > x.length) {
-    myIndex = 1
+  index[n]++;
+  if (index[n] > x.length) {
+    index[n] = 1;
   }
-  x[myIndex - 1].style.display = "block";
+  x[index[n] - 1].style.display = "block";
   setTimeout(function() {
     carousel(n, dur)
   }, dur * 1000);
