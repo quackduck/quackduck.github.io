@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function() {
-  carousel(1, 10);
+  carousel(1, 5);
   carousel(2, 5);
   carousel(3, 5);
   carousel(4, 5);
