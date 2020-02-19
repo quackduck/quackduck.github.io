@@ -1,9 +1,5 @@
 window.addEventListener("DOMContentLoaded", function() {
-  carousel(1, 5);
-  carousel(2, 5);
-  carousel(3, 5);
-  carousel(4, 5);
-  carousel(5, 5);
+  start(5, 5, 5, 5, 5)
 });
 var index = [0, 0, 0, 0, 0];
 
@@ -23,4 +19,12 @@ function carousel(n, dur) {
   setTimeout(function() {
     carousel(n, dur)
   }, dur * 1000);
+}
+
+function start(dur1, dur2, dur3, dur4, dur5) {
+  carousel(1, dur1);
+  carousel(2, dur2);
+  carousel(3, dur3);
+  carousel(4, dur4);
+  carousel(5, dur5);
 }
