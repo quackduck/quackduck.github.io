@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://didihomepage.com/index.html</loc>
-    <lastmod>2020-02-15</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" media="only screen and (max-width: 370px)" href="http://didihomepage.com/phone/index.html"/>
@@ -13,7 +13,7 @@
       <image:loc>http://didihomepage.com/images/picture6.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>http://didihomepage.com/images/pasted%20image%20726x564.jpg</image:loc>
+      <image:loc>http://didihomepage.com/images/pasted%20image%20726x5642.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>http://didihomepage.com/images/picture1.png</image:loc>
@@ -22,13 +22,10 @@
       <image:loc>http://didihomepage.com/images/pasted%20image%202580x1190.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>http://didihomepage.com/images/pasted%20image%20726x5642.jpg</image:loc>
+      <image:loc>http://didihomepage.com/images/pasted%20image%20726x5643.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>http://didihomepage.com/images/pasted%20image%202580x11902.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>http://didihomepage.com/images/pasted%20image%20726x5643.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>http://didihomepage.com/images/pasted%20image%20726x5644.jpg</image:loc>
@@ -68,6 +65,24 @@
     </image:image>
     <image:image>
       <image:loc>http://didihomepage.com/images/pasted%20image%20726x56416.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://didihomepage.com/images/climate.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://didihomepage.com/images/pasted%20image%201900x166.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>http://didihomepage.com/list-view-page.html</loc>
+    <lastmod>2020-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>http://didihomepage.com/images/picture1.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://didihomepage.com/images/picture1.png</image:loc>
     </image:image>
     <image:image>
       <image:loc>http://didihomepage.com/images/pasted%20image%201900x166.jpg</image:loc>

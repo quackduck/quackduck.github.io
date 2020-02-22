@@ -1,21 +1,23 @@
-<manifest alg="2" build="2018.1.1.386" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="didihomepage.com" resolutions="1x" timestamp="1581778695895">
+<manifest alg="2" build="2018.1.1.386" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="didihomepage.com" resolutions="1x" timestamp="1582259781266">
   <folder name="css">
     <file name="site_global.css" crc="444006867"/>
-    <file name="index.css" crc="3995127598" ref="index"/>
+    <file name="list-view-page.css" crc="93637374" ref="list-view-page"/>
+    <file name="index.css" crc="4119002466" ref="index"/>
   </folder>
   <folder name="scripts">
-    <file name="jquery-1.8.3.min.js" crc="209076791" ref="phone>index:index"/>
-    <file name="museutils.js" crc="3939489907" ref="phone>index:index"/>
-    <file name="whatinput.js" crc="86476730" ref="phone>index:index"/>
-    <file name="museconfig.js" crc="128606099" ref="phone>index:index"/>
-    <file name="jquery.watch.js" crc="522499760" ref="phone>index:index"/>
-    <file name="require.js" crc="4177726516" ref="phone>index:index"/>
-    <file name="jquery.scrolleffects.js" crc="312044820" ref="index"/>
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="phone>index:index:list-view-page"/>
+    <file name="museutils.js" crc="3939489907" ref="phone>index:index:list-view-page"/>
+    <file name="whatinput.js" crc="86476730" ref="phone>index:index:list-view-page"/>
+    <file name="museconfig.js" crc="128606099" ref="phone>index:index:list-view-page"/>
+    <file name="jquery.watch.js" crc="522499760" ref="phone>index:index:list-view-page"/>
+    <file name="require.js" crc="4177726516" ref="phone>index:index:list-view-page"/>
+    <file name="jquery.scrolleffects.js" crc="312044820" ref="index:list-view-page"/>
   </folder>
   <folder name="images">
-    <file name="picture1.jpg" crc="3958454309" seo="true" ref="phone>index:index">
+    <file name="picture1.jpg" crc="3958454309" seo="true" ref="phone>index:index:list-view-page">
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
+      <caption webpage="list-view-page" alt=""/>
     </file>
     <file name="u1212-10.png" crc="3855178394" ref="phone>index"/>
     <file name="u1216-4.png" crc="3778152871" ref="phone>index"/>
@@ -50,7 +52,7 @@
       <caption webpage="index" alt=""/>
     </file>
     <file name="u1462-4.png" crc="3782607622" ref="phone>index"/>
-    <file name="blank.gif" crc="4208392903" ref="phone>index:index"/>
+    <file name="blank.gif" crc="4208392903" ref="phone>index:index:list-view-page"/>
     <file name="u1267.png" crc="451339566" ref="phone>index"/>
     <file name="u1267-r.png" crc="3859402524" ref="phone>index"/>
     <file name="u1267-m.png" crc="4064173113" ref="phone>index"/>
@@ -93,7 +95,7 @@
     <file name="u1277-r.png" crc="336944946" ref="phone>index"/>
     <file name="u1277-m.png" crc="476689439" ref="phone>index"/>
     <file name="u1232-4.png" crc="3930419303" ref="phone>index"/>
-    <file name="pasted image 726x564381x307.jpg" crc="4005007633" seo="true" ref="phone>index">
+    <file name="pasted image 726x564.jpg" crc="4005007633" seo="true" ref="phone>index">
       <caption webpage="index" alt=""/>
     </file>
     <file name="pasted image 726x564377x228.jpg" crc="3898691582" seo="true" ref="phone>index">
@@ -115,19 +117,20 @@
     <file name="u1233-4.png" crc="442077852" ref="phone>index"/>
     <file name="u1468-4.png" crc="102254542" ref="phone>index"/>
     <file name="u1283-4.png" crc="3887949827" ref="phone>index"/>
-    <file name="pasted image 726x564.jpg" crc="218162413" seo="true" ref="phone>index:index">
+    <file name="pasted image 726x5642.jpg" crc="218162413" seo="true" ref="phone>index:index">
       <caption webpage="index" alt=""/>
       <caption webpage="index" alt=""/>
     </file>
     <file name="u178-8.png" crc="425122141" ref="index"/>
-    <file name="picture1.png" crc="3878827860" seo="true" ref="index">
+    <file name="picture1.png" crc="3878827860" seo="true" ref="index:list-view-page">
       <caption webpage="index" alt=""/>
+      <caption webpage="list-view-page" alt=""/>
     </file>
     <file name="u268-4.png" crc="404401702" ref="index"/>
     <file name="pasted image 2580x1190.jpg" crc="4133546333" seo="true" ref="index">
       <caption webpage="index" alt=""/>
     </file>
-    <file name="pasted image 726x5642.jpg" crc="187195643" seo="true" ref="index">
+    <file name="pasted image 726x5643.jpg" crc="187195643" seo="true" ref="index">
       <caption webpage="index" alt=""/>
     </file>
     <file name="pasted image 2580x11902.jpg" crc="4217915444" seo="true" ref="index">
@@ -141,22 +144,21 @@
     <file name="u330_states-r.png" crc="3866797105" ref="index"/>
     <file name="u333_states.png" crc="68599085" ref="index"/>
     <file name="u333_states-r.png" crc="4038634068" ref="index"/>
+    <file name="u2353_states.png" crc="4119024004" ref="index"/>
+    <file name="u2353_states-r.png" crc="489904889" ref="index"/>
     <file name="u336-4.png" crc="3931190237" ref="index"/>
     <file name="u342-4.png" crc="288220773" ref="index"/>
-    <file name="pasted image 726x5643.jpg" crc="533703414" seo="true" ref="index">
+    <file name="pasted image 726x5644.jpg" crc="533703414" seo="true" ref="index">
       <caption webpage="index" alt=""/>
     </file>
     <file name="u360-4.png" crc="4267939361" ref="index"/>
-    <file name="pasted image 726x5644.jpg" crc="3868143352" seo="true" ref="index">
+    <file name="pasted image 726x5645.jpg" crc="475849752" seo="true" ref="index">
       <caption webpage="index" alt=""/>
     </file>
-    <file name="pasted image 726x5645.jpg" crc="347262150" seo="true" ref="index">
+    <file name="pasted image 726x5646.jpg" crc="3868143352" seo="true" ref="index">
       <caption webpage="index" alt=""/>
     </file>
-    <file name="pasted image 726x5646.jpg" crc="3800857609" seo="true" ref="index">
-      <caption webpage="index" alt=""/>
-    </file>
-    <file name="pasted image 726x5647.jpg" crc="475849752" seo="true" ref="index">
+    <file name="pasted image 726x5647.jpg" crc="347262150" seo="true" ref="index">
       <caption webpage="index" alt=""/>
     </file>
     <file name="pasted image 726x5648.jpg" crc="126587879" seo="true" ref="index">
@@ -219,9 +221,6 @@
     <file name="u667.png" crc="4042081889" ref="index"/>
     <file name="u667-r.png" crc="387740256" ref="index"/>
     <file name="u667-m.png" crc="3989410537" ref="index"/>
-    <file name="u674.png" crc="3885099830" ref="index"/>
-    <file name="u674-r.png" crc="434201224" ref="index"/>
-    <file name="u674-m.png" crc="330413793" ref="index"/>
     <file name="u677.png" crc="245113757" ref="index"/>
     <file name="u677-r.png" crc="4006579659" ref="index"/>
     <file name="u677-m.png" crc="336737350" ref="index"/>
@@ -231,19 +230,47 @@
     <file name="u683.png" crc="258906335" ref="index"/>
     <file name="u683-r.png" crc="3771344069" ref="index"/>
     <file name="u683-m.png" crc="228986194" ref="index"/>
+    <file name="u2334.png" crc="269773347" ref="index"/>
+    <file name="u2334-r.png" crc="88358036" ref="index"/>
+    <file name="u2337.png" crc="4127477153" ref="index"/>
+    <file name="u2337-r.png" crc="124825271" ref="index"/>
+    <file name="u2340.png" crc="438656991" ref="index"/>
+    <file name="u2340-r.png" crc="503472538" ref="index"/>
+    <file name="climate.jpg" crc="45619003" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="u674.png" crc="3885099830" ref="index"/>
+    <file name="u674-r.png" crc="434201224" ref="index"/>
+    <file name="u674-m.png" crc="330413793" ref="index"/>
     <file name="u363-4.png" crc="220622874" ref="index"/>
     <file name="u507-6.png" crc="87092448" ref="index"/>
     <file name="u689-4.png" crc="199953287" ref="index"/>
     <file name="u701-4.png" crc="4257106738" ref="index"/>
-    <file name="pasted image 1900x166.jpg" crc="459736324" seo="true" ref="index">
+    <file name="pasted image 1900x166.jpg" crc="459736324" seo="true" ref="index:list-view-page">
       <caption webpage="index" alt=""/>
+      <caption webpage="list-view-page" alt=""/>
     </file>
+    <file name="u2531-10.png" crc="110739788" ref="list-view-page"/>
+    <file name="u2530-4.png" crc="502356178" ref="list-view-page"/>
+    <file name="u2708-16.png" crc="4013679409" ref="list-view-page"/>
+    <file name="u2711-25.png" crc="483614380" ref="list-view-page"/>
+    <file name="u2714-13.png" crc="3897777927" ref="list-view-page"/>
+    <file name="u2717-5.png" crc="3808957308" ref="list-view-page"/>
+    <file name="u2489.png" crc="3949309099" ref="list-view-page"/>
+    <file name="u2489-r.png" crc="15579281" ref="list-view-page"/>
+    <file name="u2675.png" crc="3906497326" ref="list-view-page"/>
+    <file name="u2675-r.png" crc="4188864764" ref="list-view-page"/>
+    <file name="u2678.png" crc="530690069" ref="list-view-page"/>
+    <file name="u2678-r.png" crc="4076695524" ref="list-view-page"/>
+    <file name="u2681.png" crc="280340456" ref="list-view-page"/>
+    <file name="u2681-r.png" crc="3849753154" ref="list-view-page"/>
   </folder>
   <folder name="phone">
     <folder name="css">
       <file name="index.css" crc="4121907688" ref="phone>index"/>
     </folder>
-    <file name="index.html" crc="3933754992" seo="true" mt="1581774904731" redirect="true"/>
+    <file name="index.html" crc="4133682984" seo="true" mt="1581774904731" redirect="true"/>
   </folder>
-  <file name="index.html" crc="3968785097" seo="true" mt="1581778524919" redirect="true"/>
+  <file name="index.html" crc="114179948" seo="true" mt="1582048519563" redirect="true"/>
+  <file name="list-view-page.html" crc="3801035341" seo="true" mt="1582037311186" redirect="true"/>
 </manifest>

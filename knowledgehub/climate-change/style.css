@@ -11,6 +11,12 @@ body {
   padding: 0px;
   font-family: Montserrat, Futura, Verdana, sans-serif;
   line-height: 2em;
+  /* background-color: #444; */
+  color: black;
+}
+
+.white {
+  /* color: white; */
 }
 
 canvas {}
@@ -31,6 +37,7 @@ canvas:hover {}
 
 .red {
   color: red;
+  font-size: 1.3em;
 }
 
 .green {
@@ -55,14 +62,20 @@ main {
 
 .yellowbg {
   background-color: yellow;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .greenbg {
   background-color: greenyellow;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .bluebg {
   background-color: lightblue;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .big {
