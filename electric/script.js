@@ -8,10 +8,10 @@ window.addEventListener("DOMContentLoaded", function() {
 function submit() {
   var electcarcost = 159900; //159900 is the online price. for the 35000$ car you have to visit a store;
   if (document.getElementById("country").value == "usa") {
-    electcarcost = 39990;
+    electcarcost = 31690;
     document.getElementById("currency").innerHTML = "Please give all costs in Dollars(USD)";
   } else if (document.getElementById("country").value == "india") {
-    electcarcost = 35000 * 71.69; // 35,000 in INR
+    electcarcost = 2500000; // 35,000 in INR
     document.getElementById("currency").innerHTML = "Please give all costs in Rupees(INR)";
   } else if (document.getElementById("country").value == "uae") {
     electcarcost = 159900;
@@ -114,7 +114,7 @@ function autofill() {
     var distance = 50;
   } else if (document.getElementById("country").value == "uae") {
     var mileage = 11;
-    var gascost = 2.12;
+    var gascost = 1.80;
     var carcost = 130000;
     var maintcost = 5000;
     var electcost = 0.23;
