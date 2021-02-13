@@ -21,11 +21,11 @@ function submit() {
   var battkwh = 50;
   if (document.getElementById("fullsd").checked) {
     if (document.getElementById("country").value == "usa") {
-      electcarcost += 7000;
+      electcarcost += 10000;
     } else if (document.getElementById("country").value == "india") {
       electcarcost += 498841;
     } else if (document.getElementById("country").value == "uae") {
-      electcarcost += 24200;
+      electcarcost += 28100;
     }
   }
   var extraelectcost = parseFloat(document.getElementById("extraelectcost").value);
