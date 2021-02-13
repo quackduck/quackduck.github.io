@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", function() {
 function submit() {
   var electcarcost = 159900; //159900 is the online price. for the 35000$ car you have to visit a store;
   if (document.getElementById("country").value == "usa") {
-    electcarcost = 31690;
+    electcarcost = 37990;
     document.getElementById("currency").innerHTML = "Please give all costs in Dollars(USD)";
   } else if (document.getElementById("country").value == "india") {
     electcarcost = 2500000; // 35,000 in INR
