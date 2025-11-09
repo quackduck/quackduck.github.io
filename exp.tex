@@ -1,0 +1,717 @@
+\documentclass[12pt, letterpaper]{article}
+\title{Acromathics}
+\author{Ishan Goel}
+% \author{}
+\date{}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{algorithm}
+\usepackage{hyperref}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ, physics}
+\pagestyle{fancy}
+\rhead{\nouppercase{\leftmark}}
+
+\newcommand{\boxalign}[2][0.97\textwidth]{
+ \par\noindent\tikzstyle{mybox} = [draw=black,inner sep=6pt]
+ \begin{center}\begin{tikzpicture}
+  \node [mybox] (box){%
+   \begin{minipage}{#1}{\vspace{-5mm}#2}\end{minipage}
+  };
+ \end{tikzpicture}\end{center}
+}
+
+% \setlength{\headheight}{35pt}
+% \newenvironment{problem}[2][Problem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{sol}
+\lhead{Ishan Goel}
+% \rhead{$\exp()$}
+
+% \lhead{Ishan Goel}
+% \rhead{Leap of Faith}
+
+\setlength{\parindent}{0 pt}
+
+\begin{document}
+\maketitle
+
+Math classes are highly structured, and they just hand you results. It's way more fun to explore math on your own. I want to take you on three journeys, showing what it feels like to (re)invent math. The pre-reqs for this doc can change based on where you are, but not much prior knowledge is needed.
+
+
+\section{Roadside Gem}
+
+I'm in my AP Calculus AB class, and we've just learned about partial fraction decomposition. Here's a reminder of what that is: if you have a function that is the ratio of two polynomials, you can write it as a sum of simpler fractions. For example, $\frac{1}{x^2 - 5x + 6} = \frac{1}{(x-2)(x-3)} = \frac{1}{x-2} - \frac{1}{x-3}$. Anyway, I'm facing this problem:
+
+\[
+\int \frac{1}{x^2 + 1} \, \dd{x}
+\]
+
+... and I'm now a bit stuck, because I can't really factor $x^2 + 1$. Or... perhaps I can.
+
+\[
+x^2 + 1 = x^2 - i^2 = (x-i)(x+i)
+\]
+
+(By now, some of you might be screaming at the page about the integral being related to a certain trig function or whatever, but hey shh for now). Anyway, let's apply partial fraction decomposition:
+\begin{align*}
+    \frac{1}{x^2 + 1} &= \frac{A}{x-i} + \frac{B}{x+i} \\
+    1 &= A(x+i) + B(x-i) \\
+    \text{Let } x = i \implies 1 &= 2iA \\
+    \text{Let } x = -i \implies 1 &= -2iB \\
+    \therefore A &= \frac{1}{2i} = -\frac{i}{2} \\
+    \therefore B &= -\frac{1}{2i} = \frac{i}{2} \\
+    \frac{1}{x^2 + 1} &= \frac{i}{2} \left( \frac{1}{x+i} - \frac{1}{x-i} \right)
+\end{align*}
+
+Now we can evaluate the integral:
+\begin{align*}
+    \int \frac{1}{x^2 + 1} \, \dd{x} &= \frac{i}{2} \int \left( \frac{1}{x+i} - \frac{1}{x-i} \right) \, \dd{x} \\
+    &= \frac{i}{2} \left( \ln|x+i| - \ln|x-i| \right) + C \\
+    &= \frac{i}{2} \ln \left| \frac{x+i}{x-i} \right| + C
+\end{align*}
+
+You would be right to question this. What does it mean to take the natural log of a complex number? I have no clue. But hey, let's just assume this is valid and as a bit of a joke, you submit this wacky answer as homework and move on to the other problems. (Turns out you still get full points, but you suspect this is because your teacher does not look too closely) \\
+
+Also, let's drop the absolute value signs. Like, at this point we're plugging in complex numbers, so negative numbers are the least of our worries.
+
+\[
+\int \frac{1}{x^2 + 1} \, \dd{x} = \frac{i}{2} \ln \left( \frac{x+i}{x-i} \right) + C
+\]
+
+Later in class, I find out that the integral is actually a standard one and that:
+
+\[
+\int \frac{1}{x^2+1} \, \dd{x} = \arctan(x) + C
+\]
+
+I didn't see this, and so now I had my own answer to the problem. Let's take a leap of faith and assume that my answer is valid. What happens if we equate the two answers?
+\begin{align*}
+\frac{i}{2} \ln \left( \frac{x+i}{x-i} \right) +C &= \arctan(x) \\& \quad \text{(only one constant is needed)}
+\end{align*}
+
+Hmm, very interesting. Something involving logs and complex numbers on one side equals something involving inverse trig on the other. Maybe if we could find the inverse of this function, we could find a new way to represent $\tan(x)$. That would be interesting! But we need to find that constant $C$ first.
+\\
+
+(To be honest, at this point I put that expression into WolframAlpha to find what $C$ is, but let's pretend I didn't do that and use a semi-rigorous argument instead.)\\
+
+Since the two expressions are equal, their limits to infinity must be equal. Let's take the limit of both sides as $x \to \infty$:
+\begin{align*}
+\lim_{x \to \infty} \left( \frac{i}{2} \ln \left( \frac{x+i}{x-i} \right) +C \right) &= \lim_{x \to \infty} \arctan(x) \\
+C + \frac{i}{2} \lim_{x \to \infty} \ln \left( \frac{x+i}{x-i} \right) &= \frac{\pi}{2}
+\end{align*}
+
+Hmm, we don't actually know what that limit on the LHS is, but let's make the argument that as $x \to \infty$, the difference in imaginary part ``matters'' less and less. So:
+\begin{align*}
+    C + \frac{i}{2} \lim_{x \to \infty} \ln \left( \frac{x+i}{x-i} \right) &= \frac{\pi}{2} \\
+    C + \frac{i}{2} \lim_{x \to \infty} \ln \left( \frac{x}{x} \right) &= \frac{\pi}{2} \\
+    C + \frac{i}{2} \ln \left( 1 \right) &= \frac{\pi}{2} \\
+    C + 0 &= \frac{\pi}{2} \\
+    \therefore C &= \frac{\pi}{2}
+\end{align*}
+
+Finally, we now have a solid new representation for $\arctan(x)$:
+
+\[
+\arctan(x) = \frac{i}{2} \ln \left( \frac{x+i}{x-i} \right) + \frac{\pi}{2}
+\]
+
+Isn't that kinda cool? Yes we made some mildly shady arguments. But they're reasonable, and this is how discovery works. Come on, let's just see what happens. Let's try and find what $\tan$ is. Let's start by introducing two new variables:
+\begin{align*}
+    \text{Define $u, v$ such that } \tan(u) &= v \\
+    \text{Then, } \arctan(v) &= u \\
+    \frac{i}{2} \ln \left( \frac{v+i}{v-i} \right) + \frac{\pi}{2} &= u
+\end{align*}
+
+If we isolate $v$ in the above equation, we'll have a new representation for $\tan(x)$. Let's try:
+
+\begin{align*}
+    u &= \frac{i}{2} \ln \left( \frac{v+i}{v-i} \right) + \frac{\pi}{2} \\
+    2u &= i \ln \left( \frac{v+i}{v-i} \right) + \pi \\
+    2u - \pi &= i \ln \left( \frac{v+i}{v-i} \right) \\
+    -i (2u - \pi) &= \ln \left( \frac{v+i}{v-i} \right) \\
+    (\pi - 2u)i &= \ln \left( \frac{v+i}{v-i} \right) \\
+    e^{i \pi - 2u i} &= \frac{v+i}{v-i}
+\end{align*}
+
+Hold on a sec. Do you see that? If only we didn't have that pesky $2u i$ we may be able to find out the value of $e^{i \pi}$! And that would be quite a gem.\\
+
+Well let's try setting $u = 0$ and see what happens:
+\begin{align*}
+    e^{i \pi - 2u i} &= \frac{v+i}{v-i} \\
+    \text{Set } u = 0 \implies e^{i \pi} &= \frac{v+i}{v-i}
+\end{align*}
+
+Welp. We don't really know what $v$ is. So we can't find $e^{i \pi}$. Right? Wrong! We know what $v$ is since we defined $u$ and $v$ to be related by $\tan$. Since $\tan(u) = v$, we know that when $u = 0$, $v = tan(0) = 0$. So:
+\begin{align*}
+    e^{i \pi} &= \frac{0+i}{0-i} \\
+    e^{i \pi} &= \frac{i}{-i} \\
+    \\
+    e^{i \pi} &= -1
+\end{align*}
+
+And there, we have found the gem. But the road goes on, and so I strongly encourage you to carry on finding what $\tan$ is. It's a fun journey, and you rediscover Euler's formula among other things along the way.
+
+\newpage
+
+\section{Matrix Flow}
+
+\iffalse
+lets maybe first introduce the idea that we can use the taylor expansion to get the exp of a matrix
+but then we show that we can only really do it for some simple matrices
+then we'll take a detour into the idea of diagonalization: eigenvalues and eigenbasis etc.
+finally we'll realize that once we can diagonalize it becomes easy to compute the exponential
+we show a natural correspondence between e^(i theta) and the rotation matrix which results from exponentiating a ninety degree rotation matrix.
+could then expand into jordan normal form which works for all matrices
+\fi
+
+This time we start in my third semester of college, in which I'm learning at the same time about both differential equations and linear algebra. Let me show you a cool link. \\
+
+Let's start by considering an example from 3B1B. Suppose we have Romeo and Juliet, and two variables representing their love for each other, $r$ and $j$. Let's say for some reason that Romeo loves Juliet more when she's being aloof, but Juliet's normal and likes Romeo more when he's being nice. We can represent this with a system of differential equations:
+\begin{align*}
+    r' &= -j & \text{(Romeo's love grows when she's aloof)} \\
+    j' &= r & \text{(Juliet's love grows when he's nice)} \\
+\end{align*}
+Where the $'$ symbol represents the derivative with respect to time $t$. \\
+
+Let's first think about what we would expect the solution to this to look like. If Romeo loves Juliet more when she's aloof, and Juliet loves Romeo more when he's nice, then it seems like their love should oscillate. When Romeo is being nice, Juliet's love for him grows, but then he gets bored and becomes aloof, causing her love to decrease. This makes Romeo nice again, and the cycle continues. So we expect some sort of oscillatory solution. \\
+
+Let's solve this system in whatever way we can. We realize that we can get a connection between the two equations by taking the derivative of either equation and substituting. Take the derivative of the first equation:
+\begin{align*}
+    r'' &= -j' \\
+    \text{Substituting for } j' = r &\implies \\
+    r'' &= -r \\
+\end{align*}
+Aha! Now we're looking for a function whose second derivative is its negative. You might remember that our oscillatory friends $\sin$ and $\cos$ have this property. Let's try $r = \sin t$:
+\begin{align*}
+    r &= \sin t \\
+    r'' &= -\sin t \\
+    j &= -r' = -\cos t \\
+\end{align*}
+But actually, $r = \cos t$ would work too. The full general solution, which you can verify, is:
+\begin{align*}
+    r &= A \cos t + B \sin t \\
+    j &= A \sin t - B \cos t \\
+\end{align*}
+Where we choose $A$ and $B$ based on Romeo and Juliet's initial affections. You can verify $r'' = -r$ and $j = -r'$. \\
+
+Let's find what $A$ and $B$ are if we are given $r_0$ and $j_0$, the initial affections at time $t=0$.
+\begin{align*}
+    r_0 &= A \cos 0 + B \sin 0 = A \\
+    j_0 &= A \sin 0 - B \cos 0 = -B \\
+    \therefore A &= r_0 \\
+    \therefore B &= -j_0 \\
+    \therefore \\
+    r &= r_0 \cos t - j_0 \sin t \\
+    j &= r_0 \sin t + j_0 \cos t \\
+\end{align*}
+
+% \newpage
+
+But you know, that felt a little unsystematic. What if we had some more complicated system? 
+\begin{center}
+    \rule[1ex]{\textwidth}{.5pt}
+\end{center}
+
+We'll look at the same system in a different light in a second, but let's first take a detour to an unrelated* problem. Say we want to solve this really simple differential equation:
+\begin{align*}
+    x' &= x
+\end{align*}
+What function is its own derivative? You might remember that $x = e^t$ works. Now let's consider a slightly more complicated problem:
+\begin{align*}
+    x' &= ax & \text{Eq 1}
+\end{align*}
+Take a second to check that this solution works:
+\begin{align*}
+    x &= e^{at} & \text{Sol 1} \\
+\end{align*}
+\begin{center}
+    \rule[1ex]{\textwidth}{.5pt}
+\end{center}
+Let's now return to the original system, which I've copied here:
+\begin{align*}
+    r' &= -j \\
+    j' &= r
+\end{align*}
+Because we're trying to get a link to linear algebra, let's try to collect $r$ and $j$ into a vector $x$ and try to write the system in the language of matrices and vectors.
+\begin{align*}
+    \begin{bmatrix} r' \\ j' \end{bmatrix} &= \begin{bmatrix} -j \\ r \end{bmatrix} \\
+   \text{Let }x &= \begin{bmatrix} r \\ j \end{bmatrix} \\
+    x' &= \begin{bmatrix} r' \\ j' \end{bmatrix} \\
+    \therefore x' &= \begin{bmatrix} -j \\ r \end{bmatrix} \\
+\end{align*}
+Could we express that RHS in terms of $x$? It's already so close.
+\begin{align*}
+    \begin{bmatrix} -j \\ r \end{bmatrix} &= \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} r \\ j \end{bmatrix} \\
+    \therefore x' &= \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} x
+\end{align*}
+Whoa! Take a second to appreciate what that last equation is saying. If we imagine $x$ as a point in the 2D plane, this equation tells us that the velocity vector of that point is a 90 degree rotation of the position vector, naturally leading to a circular motion. \\ \\
+Already we see that this form gives us spatial intuition for the system. But can it help us further? Sometimes, to see further, we must see less. Let's name that matrix $A$ and obscure its components. Now the system looks like this:
+\begin{align*}
+    x' &= A x
+\end{align*}
+Aha! Doesn't this look exactly like Eq 1 from before?! What if we could solve it in the same way?
+\begin{align*}
+    x' &= A x \\
+    x &\stackrel{?!}{=} e^{At} \\
+\end{align*}
+Well, is that it? Did we solve it? You should be flooded with questions. What does it mean to exponentiate $At$, a matrix? How can you multiply $e$ by itself a matrix number of times? Obviously, this is all nonsense... right? \\
+\begin{center}
+    \rule[1ex]{\textwidth}{.5pt}
+\end{center}
+Let's create from scratch a way to exponentiate matrices. \\
+
+First, do we even know what exponentiation is? Clearly, $e^2$ is just $e$ multiplied by itself twice. But what is $e^{3.14}$? What is $e^\pi$? What is $e^{\sqrt{2}}$? You're somehow okay with these, but do you really know what they mean? You could argue that you can define exponentiation of the reals using successive rational approximations, but a much cleaner way is to use the Taylor series expansion of $e^x$, which we'll accept as fact.
+\begin{align*}
+    e^x &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots
+\end{align*}
+We see that this definition involves additions and multiplications, both of which we know how to do with matrices. So let's just use this definition to define matrix exponentiation. Let $M$ be a matrix. Then:
+\begin{align*}
+    e^{M} &= 1 + M + \frac{M^2}{2!} + \frac{M^3}{3!} + \frac{M^4}{4!} + \cdots
+\end{align*}
+But careful! For this equation to type-check, we'll replace $1$ with the identity matrix $I$. Now we can *define* matrix exponentiation as:
+% \begin{align*}
+%     e^{M} &\doteq I + M + \frac{M^2}{2!} + \frac{M^3}{3!} + \frac{M^4}{4!} + \cdots
+% \end{align*}
+\begin{center}
+\fbox{\begin{minipage}{0.6\textwidth}
+        % \begin{align*}
+$$e^{M} \doteq I + M + \frac{M^2}{2!} + \frac{M^3}{3!} + \frac{M^4}{4!} + \cdots$$
+        % \end{align*}
+\end{minipage}}
+\end{center}
+
+% \begin{center}
+%     \rule[1ex]{\textwidth}{.5pt}
+% \end{center}
+
+Now we can finally evaluate $e^{At}$. Let's try it out. First, let's compute a few powers of $A$.
+\begin{align*}
+    A &= \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \\
+    A^2 &= \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} \\
+    A^3 &= \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \\
+    A^4 &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I \\
+    A^5 &= A \\
+    \dots
+\end{align*}
+Where we can see that A is just the 90 degree rotation matrix, and so its powers cycle every 4 applications. Now we can compute $e^{At}$:
+\begin{align*}
+    e^{At} &= I + At + \frac{(At)^2}{2!} + \frac{(At)^3}{3!} + \frac{(At)^4}{4!} + \cdots \\
+    &= I + At + \frac{A^2 t^2}{2!} + \frac{A^3 t^3}{3!} + \frac{A^4 t^4}{4!} + \cdots \\
+    &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + t \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} + \frac{t^2}{2!} \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} + \frac{t^3}{3!} \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} + \frac{t^4}{4!} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \cdots \\
+    &= \begin{bmatrix} 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \cdots & -t + \frac{t^3}{3!} - \frac{t^5}{5!} + \cdots \\ t - \frac{t^3}{3!} + \frac{t^5}{5!} - \cdots & 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \cdots \end{bmatrix} \\
+    &= \begin{bmatrix} \cos t & -\sin t \\ \sin t & \cos t \end{bmatrix}
+\end{align*}
+Where we recognized the Taylor series expansions of $\sin$ and $\cos$ in the last step. \\
+
+Some of you may recognize this matrix as the rotation matrix that rotates a point by $t$ radians. This makes sense, since we know the system should produce circular motion, but it also hints at a connection to Euler's formula, since $e^{i t} = \cos t + i \sin t$ also represents a rotation in the complex plane, and $i$ is a complex analog of our 90 degree rotation matrix $A$.\\
+
+Finally, we can write down the solution to our original system:
+\begin{align*}
+    x &= e^{At} \\
+    e^{At} &= \begin{bmatrix} \cos t & -\sin t \\ \sin t & \cos t \end{bmatrix} \\
+\end{align*}
+Oh no! We know $x$ is a vector, but our solution is a matrix!? Is all hope lost? I did think so for a couple days, until I realized that the complete solution to:
+\[
+x' = a x
+\]
+is actually
+\[
+x = x_0 e^{a t}
+\]
+Where $x_0$ is the initial condition (value of $x$ at $t=0$). Perhaps we can fix our type issues by introducing a constant vector $c$ storing the initial conditions:
+\begin{align*}
+    x &= e^{At} c \\
+    \text{Let } c &= \begin{bmatrix} r_0 \\ j_0 \end{bmatrix} \\
+    \therefore x &= \begin{bmatrix} \cos t & -\sin t \\ \sin t & \cos t \end{bmatrix} \begin{bmatrix} r_0 \\ j_0 \end{bmatrix} \\
+    &= \begin{bmatrix} r_0 \cos t - j_0 \sin t \\ r_0 \sin t + j_0 \cos t \end{bmatrix}
+\end{align*}
+Finally, our solution is:
+\begin{align*}
+    r &= r_0 \cos t - j_0 \sin t \\
+    j &= r_0 \sin t + j_0 \cos t \\
+\end{align*}
+Which exactly matches our previous solution! Hooray! While this seems more systematic, and it definitely has the seeds of generality, we still had the unsystematic part of the actual matrix exponentiation, where we relied on recognizing Taylor series. If we could just systematically exponentiate matrices, we could solve any system of linear differential equations! \\
+\begin{center}
+    \rule[1ex]{\textwidth}{.5pt}
+\end{center}
+
+Enter diagonalization! \\
+
+Diagonalization is a method to factor a matrix into a product of three matrices such that the middle one is a diagonal matrix (zero everywhere except the main diagonal). The reason we care about diagonal matrices is because many computations, including raising them to powers, become trivial. For example, if $D$ is a diagonal matrix:
+\[
+    D = \begin{bmatrix} a & 0 & 0 \\ 0 & b & 0 \\ 0 & 0 & c \end{bmatrix}
+\]
+Then:
+\[
+    D^n = \begin{bmatrix} a^n & 0 & 0 \\ 0 & b^n & 0 \\ 0 & 0 & c^n \end{bmatrix}
+\]
+Based on this property, we can see that the exponential of a diagonal matrix is also easy to compute:
+\begin{align*}
+    e^D &= I + D + \frac{D^2}{2!} + \frac{D^3}{3!} + \frac{D^4}{4!} + \cdots \\
+    &= \begin{bmatrix} 1 + a + \frac{a^2}{2!} + \frac{a^3}{3!} + \cdots & 0 & 0 \\ 0 & 1 + b + \frac{b^2}{2!} + \frac{b^3}{3!} + \cdots & 0 \\ 0 & 0 & 1 + c + \frac{c^2}{2!} + \frac{c^3}{3!} + \cdots \end{bmatrix} \\
+    &= \begin{bmatrix} e^a & 0 & 0 \\ 0 & e^b & 0 \\ 0 & 0 & e^c \end{bmatrix}
+\end{align*}
+I like to think of diagonal matrices as having no interactions between different dimensions (no "cross-terms"), which is why we can simply exponentiate each dimension separately. \\
+
+We would really like all our matrices to be as easy to exponentiate as diagonal matrices, thus motivating 'diagonalization'.
+
+To build up to that concept, we first need intution for eigenvalues and eigenvectors. An eigenvector of a matrix $M$ is a vector that only gets scaled when multiplied by $M$. The amount it gets scaled by is called the eigenvalue. If $v$ is an eigenvector of $M$ with eigenvalue $\lambda$, then:
+\[
+    M v = \lambda v
+\]
+Why do we care about eigenvalues and eigenvectors? It's because this scaling property is super useful. For example, let's take this matrix:
+\[
+    M = \begin{bmatrix} 2 & 0 & 0 \\ 1 & 4 & -1 \\ -2 & -4 & 4 \end{bmatrix}
+\]
+It has the following eigenvalues and eigenvectors:
+\begin{align*}
+    \lambda_1 &= 2 & v_1 &= \begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix} \\
+    \lambda_2 &= 2 & v_2 &= \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} \\
+    \lambda_3 &= 6 & v_3 &= \begin{bmatrix} 0 \\ 1 \\ -2 \end{bmatrix} \\
+\end{align*}
+Verify for yourself that $M v_i = \lambda_i v_i$ for $i = 1, 2, 3$. \\
+
+Because of this property, it's easy to evaluate the result of a vector being transformed by $M$ if we can write it as a linear combination of the eigenvectors. Specifically, if:
+\[
+    x = a v_1 + b v_2 + c v_3
+\]
+Then:
+\begin{align*}
+    M x &= M (a v_1 + b v_2 + c v_3) \\
+    &= a M v_1 + b M v_2 + c M v_3 \\
+    &= a \lambda_1 v_1 + b \lambda_2 v_2 + c \lambda_3 v_3 \\
+    &= a (2) v_1 + b (2) v_2 + c (6) v_3 \\
+\end{align*}
+
+This gives us a hint at how to diagonalize $M$. To evaulate $Mx$ for any vector, we first need to break $x$ down into its eigenvector components, scale each component independently, and then recombine them. We can express this process in matrix form. Let $P$ be the matrix whose columns are the eigenvectors of $M$:
+\[
+    P = \begin{bmatrix} -2 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & -2 \end{bmatrix}
+\]
+Clearly, this matrix would do the recombination step (going from the scaled eigenvector components to the transformed vector). The scaling step is done by a diagonal matrix $D$ whose diagonal entries are the eigenvalues of $M$ since each one happens independently. Now, we just need to come up with the matrix that breaks $x$ down into its eigenvector components. This matrix is simply the inverse of $P$, denoted $P^{-1}$. The intuition is that $P$ takes in eigenvector components and outputs the vector, so $P^{-1}$ must take in the vector and output the eigenvector components. \\
+\[
+    D = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 6 \end{bmatrix}
+\]
+
+Putting it all together, we have:
+\begin{align*}
+    M x &= P D P^{-1} x \\
+    \therefore M &= P D P^{-1}
+\end{align*}
+In this case: 
+\begin{align*}
+    P &= \begin{bmatrix} -2 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & -2 \end{bmatrix} \\
+    D &= \begin{bmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 6 \end{bmatrix} \\
+    P^{-1} &= \frac{1}{4} \begin{bmatrix} -1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & -1 \end{bmatrix} \\
+    M &= P D P^{-1} = \begin{bmatrix} 2 & 0 & 0 \\ 1 & 4 & -1 \\ -2 & -4 & 4 \end{bmatrix}
+\end{align*}
+
+This is a beautiful result. But is it useful? Well, let's see what happens when we try to exponentiate $M$ if it has this factorization:
+\begin{align*}
+    e^{M} &= e^{P D P^{-1}} \\
+    &= I + P D P^{-1} + \frac{(P D P^{-1})^2}{2!} + \frac{(P D P^{-1})^3}{3!} + \frac{(P D P^{-1})^4}{4!} + \cdots \\
+    &= I + P D P^{-1} + \frac{P D^2 P^{-1}}{2!} + \frac{P D^3 P^{-1}}{3!} + \frac{P D^4 P^{-1}}{4!} + \cdots \\
+    &= P \left( I + D + \frac{D^2}{2!} + \frac{D^3}{3!} + \frac{D^4}{4!} + \cdots \right) P^{-1} \\
+    &= P e^{D} P^{-1}
+\end{align*}
+On the second step we used this result:
+\[
+    (P D P^{-1})^n = P D P^{-1} P D P ^{-1} \cdots P D P^{-1} = P D D \cdots D P^{-1} = P D^n P^{-1}
+\]
+
+Awesome. If we can diagonalize $M$, all we have to do is replace the diagonal matrix $D$ with its exponential, which is easy to compute. \\
+
+It might seem that this operation only works for some matrices, but in fact, there's a sense in which a random matrix can almost always be diagonalized. Let's try diagonalizing $A$ from earlier, and check if we again get the same result for $e^{At}$. \\
+
+\begin{align*}
+    A &= \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \\
+    % \text{Eigenvalues: } \lambda_1 &= -i & \lambda_2 &= i \\
+    % \text{Eigenvectors: } v_1 &= \begin{bmatrix} -i \\ 1 \end{bmatrix} & v_2 &= \begin{bmatrix} i \\ 1 \end{bmatrix} \\
+    \text{Eigenvalues: } \lambda_1 &= i & \lambda_2 &= -i \\
+    \text{Eigenvectors: } v_1 &= \begin{bmatrix} i \\ 1 \end{bmatrix} & v_2 &= \begin{bmatrix} -i \\ 1 \end{bmatrix} \\
+    P &= \begin{bmatrix} i & -i \\ 1 & 1 \end{bmatrix} \\
+    D &= \begin{bmatrix} i & 0 \\ 0 & -i \end{bmatrix} \\
+    P^{-1} &= \frac{1}{2} \begin{bmatrix} -i & 1 \\ i & 1 \end{bmatrix} \\
+\end{align*}
+
+\href{https://www.wolframalpha.com/input?i2d=true&i=%7B%7Bi%2C-i%7D%2C%7B1%2C1%7D%7D%7B%7Bi%2C0%7D%2C%7B0%2C-i%7D%7D%7B%7B-i%2C1%7D%2C%7Bi%2C1%7D%7D*0.5}{Verify this factorization on WolframAlpha.}
+
+Now we can compute $e^{At}$:
+\begin{align*}
+    e^{At} &= P e^{D t} P^{-1} \\
+    &= \begin{bmatrix} i & -i \\ 1 & 1 \end{bmatrix} \begin{bmatrix} e^{i t} & 0 \\ 0 & e^{-i t} \end{bmatrix} \frac{1}{2} \begin{bmatrix} -i & 1 \\ i & 1 \end{bmatrix} \\
+    &= \frac{1}{2} \begin{bmatrix} i & -i \\ 1 & 1 \end{bmatrix} \begin{bmatrix} -i e^{i t} & e^{i t} \\ i e^{-i t} & e^{-i t} \end{bmatrix} \\
+    &= \frac{1}{2} \begin{bmatrix} e^{i t} + e^{-i t} & i (e^{i t} - e^{-i t}) \\ -i (e^{i t} - e^{-i t}) & e^{i t} + e^{-i t} \end{bmatrix} \\
+    &= \frac{1}{2} \begin{bmatrix} e^{i t} + e^{-i t} & \frac{-1}{i}(e^{i t} - e^{-i t}) \\ \frac{1}{i} (e^{i t} - e^{-i t}) & e^{i t} + e^{-i t} \end{bmatrix} \\
+    &= \begin{bmatrix} \cos t & -\sin t \\ \sin t & \cos t \end{bmatrix}
+\end{align*}
+
+\href{https://www.wolframalpha.com/input?i2d=true&i=simplify+%7B%7Bi%2C-i%7D%2C%7B1%2C1%7D%7D%7B%7BPower%5Be%2Cit%5D%2C0%7D%2C%7B0%2CPower%5Be%2C-it%5D%7D%7D%7B%7B-i%2C1%7D%2C%7Bi%2C1%7D%7D*0.5}{Verify this on WolframAlpha.}
+
+As expected, this gives us the 2D rotation matrix again!
+Now, let's recap our method for solving systems of linear differential equations powered by exponentiating matrices.
+\begin{enumerate}
+    \itemsep-0.25em
+    \item Write the system in matrix form $x' = A x$
+    \item Diagonalize $A$ into $A = P D P^{-1}$
+    \item Compute $e^{A t} = P e^{D t} P^{-1}$
+    \item Write the solution as $x = e^{A t} x_0$
+    \item Plug in the initial conditions directly into $x_0$ and the answer pops out.
+\end{enumerate}
+We made two leaps of faith: first, we assumed that the solution for a single variable differential equation $x' = a x$ generalizes to the matrix case $x' = A x$, and second, we assumed that matrix exponentiation is defined via the Taylor series expansion. We see that making reasonable choices in our leaps of faith lead to beautiful truths.
+
+\newpage
+
+\section{Taylor Might}
+
+I remember watching a 3Blue1Brown video that ended on the massive cliffhanger of what $e^{\dv{x}}$ is (in words, the exponential of the $\dv{x}$ operator), and so let's explore that. \\
+
+To simplify things, let's use Heaviside's notation for the derivative operator. 
+\begin{align*}
+    D &= \dv{x}
+    % D^2 &= \frac{d^2}{\, \dd{x}^2} \\
+    % \cdots \\
+\end{align*}
+What's an operator, you ask? It's just something that takes in a function and spits out another function. For example, applying $D$ (same as $\dv{x}$) to the function $x^2$ gives $2x$. \\
+
+As usual, let's start by expanding $e^D$:
+\begin{align*}
+    e^D &= 1 + D + \frac{D^2}{2!} + \frac{D^3}{3!} + \frac{D^4}{4!} + \cdots
+\end{align*}
+Does this maybe feel like an abuse of notation? Like, we're just using this Taylor series expansion in a way it's not meant to? It should. You could understandably scoff and say that this is complete nonsense. But again, let's just be reasonable whenever we run into problems, and see what happens.\\
+
+Here's a bunch of questions you might reasonably ask (in order of decreasing obviousness)
+\begin{enumerate}
+    \item What does multiplying two operators mean???
+    \item What's addition??
+    \item And what does multiplying by a scalar do?
+\end{enumerate}
+
+Okay now let's come up with some reasonable answers.
+
+\begin{enumerate}
+    \item Let's say that multiplying operators means applying them in sequence.
+    \begin{align*}
+        D^2 = D D = \dv[2]{x}
+    \end{align*}
+    \item Let's say that adding operators means applying them and adding the results.
+    \begin{align*}
+        (D^2 + 2D + 1) \sin x &= D^2 \sin x + 2D \sin x + \sin x \\
+        &= -\sin x + 2 \cos x + \sin x \\ &= 2 \cos x 
+    \end{align*}
+    Ah, but also $(D^2 + 2D + 1) = (D+1)^2$, so let's confirm that gives us the same answer:
+    \begin{align*}
+        (D+1)^2 \sin x &= (D+1)(D+1) \sin x \\
+        &= (D+1) (\cos x + \sin x) \\
+        &= (-\sin x + \cos x) + (\cos x + \sin x) \\
+        &= 2 \cos x
+    \end{align*}
+    Wow, maybe we have some good stuff here.
+    \item I kind of already used it for the second one's answer. It's pretty obvious:
+    \begin{align*}
+        (1) f(x) &= f(x) \\
+        (\pi D) f(x) &= \pi (D f(x))
+    \end{align*}
+\end{enumerate}
+
+Finally, armed with these reasonable definitions, we now know what this operation means. We don't yet know what it actually does, but we can evaluate it.
+\begin{align*}
+    e^D &= 1 + D + \frac{D^2}{2!} + \frac{D^3}{3!} + \frac{D^4}{4!} + \cdots
+\end{align*}
+(Oh, btw, that 1 is an operator. Consider it the identity operator. Don't be fooled!) \\\\
+Let's apply it to a couple functions and see what happens.
+\begin{align*}
+    e^D x &= (1) x + (D) x + \frac{(D^2) x}{2!} + \frac{(D^3) x}{3!} + \cdots \\
+    &= x + 1 + 0 + 0 + \ldots \\
+    &= x + 1 \\
+    \\
+    e^D x^2 &= (1) x^2 + (D) x^2 + \frac{(D^2) x^2}{2!} + \frac{(D^3) x^2}{3!} + \cdots \\
+    &= x^2 + 2x + 1 + 0 + \ldots \\
+    &= (x+1)^2 \\
+    \\
+    e^D e^x &= (1) e^x + (D) e^x + \frac{(D^2) e^x}{2!} + \frac{(D^3) e^x}{3!} + \cdots \\
+    &= e^x \cdot \left(1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \cdots\right) \\
+    &= e^x e \\
+    &= e^{x+1}
+\end{align*}
+
+Perhaps you are noticing a pattern by now...
+\newpage
+Let's try something a bit harder. Let's try $e^D \sin x$.
+\begin{align*}
+    e^D \sin x &= (1) \sin x + (D) \sin x + \frac{(D^2) \sin x}{2!} + \frac{(D^3) \sin x}{3!}
+    % \\ &+ \frac{(D^4) \sin x}{4!} + \frac{(D^5) \sin x}{5!} + \frac{(D^6) \sin x}{6!} + \frac{(D^7) \sin x}{7!} 
+    + \cdots \\
+    \\
+    &= \frac{\sin x}{0!} + \frac{\cos x}{1!} + \frac{-\sin x}{2!} + \frac{-\cos x}{3!} + \\ 
+    &\quad \ \frac{\sin x}{4!} + \frac{\cos x}{5!} + \frac{-\sin x}{6!} + \frac{-\cos x}{7!} + \cdots \\
+    \\
+    &= \sin x \left(\frac{1}{0!} - \frac{1}{2!} + \frac{1}{4!} - \frac{1}{6!} + \cdots \right) + \cos x \left(\frac{1}{1!} - \frac{1}{3!} + \frac{1}{5!} - \frac{1}{7!} + \cdots \right)
+\end{align*}
+
+Hmm, do those infinite sums look a bit familar? Let's remind ourselves of the Taylor series expansions of $\sin$ and $\cos$:
+\begin{align*}
+    \sin x &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \\
+    \cos x &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\
+    \therefore \sin 1 &= \frac{1}{1!} - \frac{1}{3!} + \frac{1}{5!} - \frac{1}{7!} + \cdots \\
+    \therefore \cos 1 &= \frac{1}{0!} - \frac{1}{2!} + \frac{1}{4!} - \frac{1}{6!} + \cdots
+\end{align*}
+Thus:
+\begin{align*}
+    e^D \sin x &= \sin x \cos 1 + \cos x \sin 1 \\
+    \sin (x + a) &= \sin x \cos a + \cos x \sin a & \text{(angle sum)}
+    \\ &\therefore \\
+    e^D \sin x &= \sin (x+1)
+\end{align*}
+
+Wow. Look at that simplification! That's crazy. Wow it really does seem like:
+\[e^D f(x) = f(x+1)\] Pretty odd. And it seems like Taylor series play a big role. Maybe we can figure out if this fact is generally true by assuming we have a series representation of some function $f(x)$ and then applying $e^D$ to it. Let's try that.\\
+
+% Let's say that $f(x)$ has a series representation:
+% \begin{align*}
+%     % f(x) &= a_0 + a_1 (x-c) + \frac{a_2}{2!} (x-c)^2 + \frac{a_3}{3!} (x-c)^3 + \cdots \\
+%     % &= \sum_{n=0}^{\infty} \frac{a_n}{n!} (x-c)^n \\
+%     % f'(x) &= \sum_{n=1}^{\infty} \frac{a_n}{(n-1)!} (x-c)^{n-1} \\
+%     % f''(x) &= \sum_{n=2}^{\infty} \frac{a_n}{(n-2)!} (x-c)^{n-2} \\
+%     f(x) &= a_0 + a_1 (x-c) + \frac{a_2}{2!} (x-c)^2 + \frac{a_3}{3!} (x-c)^3 + \cdots \\
+%     f'(x) &= a_1 + a_2 (x-c) + \frac{a_3}{2!} (x-c)^2 + \frac{a_4}{3!} (x-c)^4 \cdots \\
+%     f''(x) &= a_2 + a_3 (x-c) + \frac{a_4}{2!} (x-c)^2 + \frac{a_5}{3!} (x-c)^5 \cdots \\
+%     \ldots \\
+%     \therefore f^{(k)}(x) &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!} (x-c)^n \\
+% \end{align*}
+
+% Now let's apply $e^D$ to $f(x)$:
+% \begin{align*}
+%     e^D f(x) &= f(x) + f'(x) + \frac{f''(x)}{2!} + \frac{f'''(x)}{3!} + \cdots \\
+%     &= \sum_{n=0}^{\infty} \frac{a_n}{n!} (x-c)^n + \sum_{n=0}^{\infty} \frac{a_{n+1}}{n!} (x-c)^n + \frac{1}{2!} \sum_{n=0}^{\infty} \frac{a_{n+2}}{n!} (x-c)^n + \cdots \\
+%     % &= \sum_{n=0}^{\infty} \left(\frac{1}{0!} \cdot \frac{a_n}{n!} + \frac{1}{1!} \cdot \frac{a_{n+1}}{n!} + \frac{1}{2!} \frac{a_{n+2}}{n!} + \cdots \right) (x-c)^n \\
+%     &= \sum_{n=0}^{\infty} \frac{(x-c)^n}{n!} \left(a_n + a_{n+1} + \frac{a_{n+2}}{2!} + \frac{a_{n+3}}{3!} + \cdots \right) \\
+%     &= \sum_{n=0}^{\infty} \frac{(x-c)^n}{n!} \left(\sum_{k=0}^{\infty} \frac{a_{n+k}}{k!} \right) \\
+% \end{align*}
+
+% Hmm, we don't really know what that series on the right is. I spent a couple minutes looking at it until I realized the following:
+% \begin{align*}
+%     \text{(As shown)}\quad f^{(k)}(x) &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!} (x-c)^n \\
+%     f^{(k)}(c+1) &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!} (1)^n \\
+%     &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!} \\
+% \end{align*}
+
+% This is almost the form we want. Now let's rename $n$ to $k$ and $k$ to $n$ to get this:
+% \begin{align*}
+%     f^{(n)}(c+1) &= \sum_{k=0}^{\infty} \frac{a_{k+n}}{k!} \\
+% \end{align*}
+% Convince yourself that renaming is a valid move. Now we can substitute this into our expression for $e^D f(x)$:
+% \begin{align*}
+%     e^D f(x) &= \sum_{n=0}^{\infty} \frac{(x-c)^n}{n!} \left(\sum_{k=0}^{\infty} \frac{a_{n+k}}{k!} \right) \\
+%     &= \sum_{n=0}^{\infty} \frac{(x-c)^n}{n!} f^{(n)}(c+1) \\
+%     &= f(x+1)
+% \end{align*}
+Let's say that $f(x)$ has a certain series representation:
+\begin{align*}
+    f(x) &= a_0 + a_1x + \frac{a_2}{2!} x^2 + \frac{a_3}{3!} x^3 + \cdots \\
+    f'(x) &= a_1 + a_2 x + \frac{a_3}{2!} x^2 + \frac{a_4}{3!} x^3 + \cdots \\
+    f''(x) &= a_2 + a_3 x + \frac{a_4}{2!} x^2 + \frac{a_5}{3!} x^3 + \cdots \\
+    % f^{(k)}(x) &= a_n + a_{n+1} x + \frac{a_{n+2}}{2!} x^2 + \frac{a_{n+3}}{3!} x^3 + \cdots \\
+    \ldots \\
+    \therefore f^{(k)}(x) &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!} x^n
+\end{align*}
+% Some more helpful things to note:
+% \begin{align*}
+%     f(x) &= \sum_{n=0}^{\infty} \frac{a_n}{n!} x^n \\
+%     a_n &= f^{(n)}(0) \\
+% \end{align*}
+Now let's apply $e^D$ to $f(x)$:
+\begin{align*}
+    e^D f(x) &= f(x) + f'(x) + \frac{f''(x)}{2!} + \frac{f'''(x)}{3!} + \cdots \\
+    &= \sum_{n=0}^{\infty} \frac{a_n}{n!} x^n + \sum_{n=0}^{\infty} \frac{a_{n+1}}{n!} x^n + \frac{1}{2!} \sum_{n=0}^{\infty} \frac{a_{n+2}}{n!} x^n + \cdots \\
+    &= \sum_{n=0}^{\infty} \frac{x^n}{n!} \left(a_n + a_{n+1} + \frac{a_{n+2}}{2!} + \frac{a_{n+3}}{3!} + \cdots \right) \\
+    &= \sum_{n=0}^{\infty} \left(\frac{x^n}{n!} \sum_{k=0}^{\infty} \frac{a_{n+k}}{k!} \right)
+\end{align*}
+
+Hmm, we don't really know what that innermost series is. I spent a couple minutes looking at it until I realized the following:
+\begin{align*}
+    \text{(As shown)}\quad f^{(k)}(x) &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!} x^n \\
+    f^{(k)}(1) &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!} (1)^n \\
+    &= \sum_{n=0}^{\infty} \frac{a_{n+k}}{n!}
+\end{align*}
+
+This is almost the form we want. Now let's rename $n$ to $k$ and $k$ to $n$ to get this:
+\begin{align*}
+    f^{(n)}(1) &= \sum_{k=0}^{\infty} \frac{a_{k+n}}{k!}
+\end{align*}
+Convince yourself that renaming is a valid move. Now we can substitute this into our expression for $e^D f(x)$:
+\begin{align*}
+    e^D f(x) &= \sum_{n=0}^{\infty} \left(\frac{x^n}{n!} \sum_{k=0}^{\infty} \frac{a_{n+k}}{k!} \right) \\
+    &= \sum_{n=0}^{\infty} \frac{x^n}{n!} f^{(n)}(1)
+\end{align*}
+
+This is beginning to look a lot like a Taylor series expansion, except we seem to be missing the shift. Or are we?! Look:
+\begin{align*}
+    \sum_{n=0}^{\infty} \frac{x^n}{n!} f^{(n)}(1) &= \sum_{n=0}^{\infty} \frac{(x+1 - 1)^n}{n!} f^{(n)}(1) \\
+    &= \sum_{n=0}^{\infty} \frac{\left(\left(x+1\right)-1\right)^n}{n!} f^{(n)}(1) \\
+    &= f(x+1)
+\end{align*}
+
+That series perfectly matches the Taylor series expansion of $f(x+1)$ centered at $1$. So it seems like we have a general result. If $f(x)$ has a series expansion with center 0, then:
+\[
+e^D f(x) = f(x+1)
+\]
+It's easy to see that we can extend this to any center $c$ by constructing a new function $g(x) = f(x+c)$ and then applying the above result to $g(x)$. Thus, if $f(x)$ has a Taylor series expansion, applying the exponential of the derivative operator to it shifts the function by one!\\
+\\
+A natural question to ask at this point is whether we can create any shift. For example, it's easy to see that applying $e^D$ twice should shift $f(x)$ by $2$. But also:
+\begin{align*}
+    e^D e^D f(x) &= \left(e^D\right)^2 f(x) \\
+    f(x+2) &\stackrel{!?}{=} e^{2D} f(x)
+\end{align*}
+Huh. Based on this, we can see that it could be reasonable to conjecture that:
+\[
+e^{sD} f(x) = f(x+s)
+\]
+
+If we go through the earlier proof again but with $s$ this time, it's not hard to see that:
+\begin{align*}
+    e^{sD} f(x) = \sum_{n=0}^{\infty} \frac{x^n}{n!} \left(\sum_{k=0}^{\infty} \frac{a_{n+k}}{k!} \cdot s^k \right)
+\end{align*}
+
+Also not too hard to see that:
+\begin{align*}
+    f^{(n)}(s) &= \sum_{k=0}^{\infty} \frac{a_{k+n}}{k!} \cdot s^k
+\end{align*}
+
+And so:
+\begin{align*}
+    e^{sD} f(x) &= \sum_{n=0}^{\infty} \frac{\left((x+s)-s\right)^n}{n!} f^{(n)}(s) \\
+    &= f(x+s)
+\end{align*}
+
+Thus we have this general result. If $f(x)$ has a Taylor series expansion, then:
+\begin{align*}
+    \\
+    \scalebox{1.5}{$\displaystyle e^{s\dv{x}} f(x) = f(x+s)$} 
+    \\
+\end{align*}
+Wow! Scaling the derivative operator by some number, then applying the exponential of that operator to a function, shifts the function by that number. Isn't that beautiful? \\
+
+Why might this be useful? Great question. I guess, for example, you could derive the angle sum formula. Do let me know if you think of something. But also it's kind of just pretty.\\
+
+More abuses of notation to consider:
+\begin{align*}
+    e^{i D} f(x) &\stackrel{?}{=} \left(\cos D + i \sin D\right) f(x) \stackrel{?}{=} f(x+i) &\text{Pretty sure this is fine} \\
+    \\
+    \left(e^{D}\right)^{\int} f(x) &\stackrel{?}{=} \left(e^{D \int}\right) f(x)\stackrel{?}{=} e f(x) &\text{Nonsense} \\
+    \\
+    e^{D} e^{-D} f(x) &= f(x) &\text{Definitely true}
+\end{align*}
+
+Try the first one! Another thing to try is to prove that the shift operator works for monomials without using Taylor series. You can then extend that to polynomials and then to all functions with series representations. \\
+
+But I do want to remind you that notation abuse doesn't always work out:
+\begin{align*}
+    e^{i \pi} &= e^{-i \pi} = -1 \\
+    e^{i \pi D} &\stackrel{?}{=} e^{-i \pi D}
+\end{align*}
+One side shifts functions by $i \pi$ and the other by $-i \pi$, so it's definitely not true. (Do you see why it works in one case but not the other? Hint: inverse.)
+\\
+\\
+I still think most people are too abuse-of-notation averse, so I encourage you to try that. Have fun and play responsibly!
+\end{document}
